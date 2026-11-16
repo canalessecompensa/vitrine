@@ -1,0 +1,1771 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Esse Compensa! — Vitrine Oficial de Ofertas, Histórico &amp; Alertas</title>
+  <meta name="description" content="Curadoria oficial Esse Compensa! Preços auditados diariamente, datas de postagem transparentes, gráfico de histórico de preços e alerta de queda de preço por e-mail." />
+  <meta name="theme-color" content="#0B0B0D" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --surface-000: #0B0B0D;
+      --surface-100: #16171B;
+      --surface-200: #23252B;
+      --hairline: #2C2E35;
+      --ink: #F5F2EA;
+      --ink-muted: #A7A9B0;
+      --ouro: #C9A96B;
+      --ouro-soft: rgba(201, 169, 107, 0.14);
+      --ouro-border: rgba(201, 169, 107, 0.5);
+      --on-ouro: #0B0B0D;
+      --verde: #3FBF8A;
+      --verde-soft: rgba(63, 191, 138, 0.15);
+      --verde-border: rgba(63, 191, 138, 0.45);
+      --titanio: #8C93A1;
+      --alerta: #E8955A;
+      --alerta-soft: rgba(232, 149, 90, 0.14);
+      --alerta-border: rgba(232, 149, 90, 0.45);
+      --perigo: #FCA5A5;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--surface-000);
+      background-image: radial-gradient(circle at 50% 0%, rgba(201, 169, 107, 0.10) 0%, transparent 55%);
+      color: var(--ink);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      min-height: 100vh;
+      line-height: 1.45;
+      padding-bottom: 56px;
+    }
+
+    .shell {
+      max-width: 540px;
+      margin: 0 auto;
+      padding: 18px 16px 36px;
+    }
+
+    /* Header */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-squircle {
+      width: 46px;
+      height: 46px;
+      border-radius: 13px;
+      background: var(--surface-000);
+      border: 2px solid var(--ouro);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: 0 6px 20px rgba(201, 169, 107, 0.18);
+    }
+
+    .brand-title {
+      font-family: 'Sora', sans-serif;
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+    }
+
+    .brand-title span {
+      color: var(--ouro);
+    }
+
+    .brand-sub {
+      font-size: 11.5px;
+      color: var(--ink-muted);
+    }
+
+    .live-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 11px;
+      border-radius: 999px;
+      background: var(--ouro-soft);
+      border: 1px solid var(--ouro-border);
+      color: var(--ouro);
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .live-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--verde);
+      box-shadow: 0 0 8px var(--verde);
+    }
+
+    /* Transparency & Daily Audit Notice Banner */
+    .audit-disclaimer {
+      background: linear-gradient(135deg, rgba(232, 149, 90, 0.11) 0%, rgba(22, 23, 27, 0.96) 100%);
+      border: 1px solid var(--alerta-border);
+      border-radius: 14px;
+      padding: 11px 13px;
+      margin-bottom: 14px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+
+    .audit-disclaimer-icon {
+      font-size: 16px;
+      line-height: 1.2;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .audit-disclaimer-text {
+      font-size: 11.5px;
+      color: var(--ink-muted);
+      line-height: 1.42;
+    }
+
+    .audit-disclaimer-text strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .audit-disclaimer-meta {
+      margin-top: 5px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      font-size: 11px;
+      color: var(--ouro);
+      font-weight: 600;
+    }
+
+    .btn-link-inline {
+      background: none;
+      border: none;
+      color: var(--verde);
+      font-family: inherit;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: underline;
+      padding: 0;
+    }
+
+    /* Social Funnel Buttons */
+    .funnel-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .funnel-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      font-size: 12.5px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.15s ease, border-color 0.15s ease;
+    }
+
+    .funnel-btn:active {
+      transform: scale(0.98);
+    }
+
+    .funnel-tg {
+      background: var(--ouro-soft);
+      border: 1px solid var(--ouro);
+      color: var(--ouro);
+    }
+
+    .funnel-ig {
+      background: var(--surface-100);
+      border: 1px solid var(--hairline);
+      color: var(--ink);
+    }
+
+    /* Main Tabs: Ofertas vs Dicas vs Alertas */
+    .mode-tabs {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr 1fr;
+      gap: 5px;
+      padding: 5px;
+      background: var(--surface-100);
+      border: 1px solid var(--hairline);
+      border-radius: 14px;
+      margin-bottom: 14px;
+    }
+
+    .mode-tab {
+      border: none;
+      background: transparent;
+      color: var(--ink-muted);
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 9px 6px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .mode-tab.active {
+      background: var(--ouro);
+      color: var(--on-ouro);
+      font-weight: 700;
+    }
+
+    /* Search Box */
+    .search-wrap {
+      position: relative;
+      margin-bottom: 11px;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 12px 72px 12px 38px;
+      border-radius: 13px;
+      background: var(--surface-100);
+      border: 1.5px solid var(--hairline);
+      color: var(--ink);
+      font-family: inherit;
+      font-size: 13.5px;
+      outline: none;
+      transition: border-color 0.15s ease;
+    }
+
+    .search-input::placeholder {
+      color: var(--ink-muted);
+    }
+
+    .search-input:focus {
+      border-color: var(--ouro);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 13px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--ink-muted);
+      font-size: 14px;
+      pointer-events: none;
+    }
+
+    .search-clear {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--surface-200);
+      border: 1px solid var(--hairline);
+      color: var(--ouro);
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 4px 9px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: none;
+    }
+
+    /* Filter Pills */
+    .chips-row {
+      display: flex;
+      gap: 7px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+      margin-bottom: 14px;
+      scrollbar-width: none;
+    }
+
+    .chips-row::-webkit-scrollbar {
+      display: none;
+    }
+
+    .chip {
+      border: 1px solid var(--hairline);
+      background: var(--surface-100);
+      color: var(--ink-muted);
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 999px;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .chip.chip-green {
+      color: var(--verde);
+      border-color: var(--verde-border);
+    }
+
+    .chip.active {
+      background: var(--ouro);
+      color: var(--on-ouro);
+      border-color: var(--ouro);
+      font-weight: 700;
+    }
+
+    /* Hero Offer Card */
+    .hero-card {
+      background: linear-gradient(165deg, rgba(201, 169, 107, 0.12) 0%, var(--surface-100) 58%);
+      border: 1.5px solid var(--ouro);
+      border-radius: 20px;
+      padding: 16px;
+      margin-bottom: 18px;
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.45);
+    }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+
+    .badge-code-hero {
+      background: var(--ouro);
+      color: var(--on-ouro);
+      font-family: 'Sora', sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      padding: 4px 11px;
+      border-radius: 999px;
+    }
+
+    .badge-green {
+      background: var(--verde-soft);
+      border: 1px solid var(--verde-border);
+      color: var(--verde);
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 999px;
+    }
+
+    .badge-warn {
+      background: var(--alerta-soft);
+      border: 1px solid var(--alerta-border);
+      color: var(--alerta);
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 999px;
+    }
+
+    .badge-esgotado {
+      background: rgba(239, 68, 68, 0.18);
+      border: 1px solid rgba(239, 68, 68, 0.5);
+      color: var(--perigo);
+      font-size: 10.5px;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 999px;
+    }
+
+    .hero-body {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+
+    .hero-img-box {
+      width: 112px;
+      height: 124px;
+      border-radius: 15px;
+      background: var(--surface-000);
+      border: 1px solid var(--hairline);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+      flex-shrink: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-img-box img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.55));
+    }
+
+    .store-tag {
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--titanio);
+      margin-bottom: 3px;
+    }
+
+    .hero-title {
+      font-family: 'Sora', sans-serif;
+      font-size: 15.5px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.25;
+      margin-bottom: 7px;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .old-price {
+      font-size: 12px;
+      color: var(--ink-muted);
+      text-decoration: line-through;
+    }
+
+    .now-price-hero {
+      font-family: 'Sora', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--ink);
+      letter-spacing: -0.02em;
+    }
+
+    .discount-pill {
+      font-family: 'Sora', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--ouro);
+    }
+
+    /* Post Date & Verification Timestamps Box */
+    .timestamps-box {
+      background: rgba(11, 11, 13, 0.55);
+      border: 1px solid var(--hairline);
+      border-radius: 11px;
+      padding: 8px 11px;
+      margin-bottom: 12px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+      font-size: 11px;
+      color: var(--ink-muted);
+    }
+
+    .ts-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .ts-item strong {
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .hero-actions {
+      display: grid;
+      grid-template-columns: 1fr 1.25fr;
+      gap: 8px;
+    }
+
+    .hero-actions.triple {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .btn-cupom {
+      background: var(--surface-200);
+      border: 1.2px solid var(--ouro);
+      color: var(--ouro);
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 10px 10px;
+      border-radius: 12px;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .btn-hist-alert {
+      background: var(--surface-200);
+      border: 1px solid var(--hairline);
+      color: var(--ink);
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 10px 10px;
+      border-radius: 12px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      transition: border-color 0.15s ease;
+    }
+
+    .btn-hist-alert:hover {
+      border-color: var(--ouro);
+      color: var(--ouro);
+    }
+
+    .btn-cta-gold {
+      background: var(--ouro);
+      border: none;
+      color: var(--on-ouro);
+      font-family: 'Sora', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 11px 14px;
+      border-radius: 12px;
+      cursor: pointer;
+      text-align: center;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    /* Section Header */
+    .sec-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--titanio);
+      margin: 6px 2px 10px;
+    }
+
+    /* Compact Offer Cards List */
+    .offers-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .offer-card {
+      background: var(--surface-100);
+      border: 1px solid var(--hairline);
+      border-radius: 16px;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      transition: border-color 0.15s ease, transform 0.15s ease;
+    }
+
+    .offer-card:hover {
+      border-color: var(--ouro-border);
+    }
+
+    .offer-card-main {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+    }
+
+    .offer-thumb {
+      width: 72px;
+      height: 72px;
+      border-radius: 12px;
+      background: var(--surface-000);
+      border: 1px solid var(--hairline);
+      padding: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .offer-thumb img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    .code-badge-sm {
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      background: var(--surface-200);
+      border: 1px solid var(--ouro);
+      color: var(--ouro);
+      font-family: 'Sora', sans-serif;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 999px;
+    }
+
+    .offer-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .offer-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--ink);
+      line-height: 1.25;
+      margin-bottom: 4px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .now-price-sm {
+      font-family: 'Sora', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .offer-btn {
+      flex-shrink: 0;
+      background: var(--ouro);
+      border: 1px solid var(--ouro);
+      color: var(--on-ouro);
+      font-family: 'Sora', sans-serif;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 8px 11px;
+      border-radius: 10px;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .offer-btn.esgotado {
+      background: var(--surface-200);
+      border-color: var(--hairline);
+      color: var(--ink-muted);
+    }
+
+    .offer-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding-top: 8px;
+      border-top: 1px dashed var(--hairline);
+      font-size: 11px;
+      color: var(--ink-muted);
+    }
+
+    .offer-dates {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .btn-mini-alert {
+      background: rgba(201, 169, 107, 0.10);
+      border: 1px solid var(--ouro-border);
+      color: var(--ouro);
+      font-family: inherit;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 9px;
+      border-radius: 8px;
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    /* Guides & Tips Cards */
+    .guide-card {
+      background: var(--surface-100);
+      border: 1px solid var(--hairline);
+      border-radius: 16px;
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+
+    .guide-tag {
+      display: inline-block;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      padding: 4px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      background: var(--ouro-soft);
+      border: 1px solid var(--ouro-border);
+      color: var(--ouro);
+    }
+
+    .guide-tag.verde {
+      background: var(--verde-soft);
+      border-color: var(--verde-border);
+      color: var(--verde);
+    }
+
+    .guide-title {
+      font-family: 'Sora', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .guide-body {
+      font-size: 13px;
+      color: var(--ink-muted);
+      margin-bottom: 12px;
+    }
+
+    .guide-cta {
+      width: 100%;
+      text-align: left;
+      background: var(--surface-000);
+      border: 1px solid var(--hairline);
+      color: var(--ouro);
+      font-family: inherit;
+      font-size: 12.5px;
+      font-weight: 600;
+      padding: 10px 12px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    /* Modal / Bottom Sheet: Price History & Email Alert (Keepa / Buscapé UX) */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.78);
+      backdrop-filter: blur(5px);
+      z-index: 900;
+      display: none;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 12px;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-sheet {
+      width: 100%;
+      max-width: 510px;
+      max-height: 92vh;
+      overflow-y: auto;
+      background: var(--surface-100);
+      border: 1.5px solid var(--ouro);
+      border-radius: 22px;
+      padding: 18px 16px 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.85);
+      animation: slideUp 0.2s ease-out;
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(24px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .modal-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+
+    .modal-close {
+      background: var(--surface-200);
+      border: 1px solid var(--hairline);
+      color: var(--ink-muted);
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      font-size: 16px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    /* 3-Pillar Anchor Grid (CamelCamelCamel / Buscapé Benchmark) */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .stat-box {
+      background: var(--surface-000);
+      border: 1px solid var(--hairline);
+      border-radius: 12px;
+      padding: 9px 8px;
+      text-align: center;
+    }
+
+    .stat-box.low {
+      border-color: var(--verde-border);
+      background: rgba(63, 191, 138, 0.07);
+    }
+
+    .stat-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--ink-muted);
+      margin-bottom: 3px;
+    }
+
+    .stat-val {
+      font-family: 'Sora', sans-serif;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .stat-box.low .stat-val {
+      color: var(--verde);
+    }
+
+    /* Interactive SVG Chart Box */
+    .chart-box {
+      background: var(--surface-000);
+      border: 1px solid var(--hairline);
+      border-radius: 14px;
+      padding: 12px 10px 8px;
+      margin-bottom: 14px;
+    }
+
+    .chart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: var(--ink-muted);
+      margin-bottom: 6px;
+    }
+
+    /* Quick Target Pills & Alert Form */
+    .alert-form-box {
+      background: linear-gradient(160deg, rgba(201, 169, 107, 0.10) 0%, var(--surface-000) 100%);
+      border: 1px solid var(--ouro-border);
+      border-radius: 15px;
+      padding: 14px;
+    }
+
+    .alert-form-title {
+      font-family: 'Sora', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ouro);
+      margin-bottom: 4px;
+    }
+
+    .alert-form-sub {
+      font-size: 11.5px;
+      color: var(--ink-muted);
+      margin-bottom: 10px;
+    }
+
+    .target-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .target-pill {
+      background: var(--surface-100);
+      border: 1px solid var(--hairline);
+      color: var(--ink-muted);
+      font-family: inherit;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 5px 10px;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+
+    .target-pill.active {
+      background: var(--verde-soft);
+      border-color: var(--verde);
+      color: var(--verde);
+      font-weight: 700;
+    }
+
+    .form-row-2 {
+      display: grid;
+      grid-template-columns: 0.9fr 1.3fr;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .field-label {
+      display: block;
+      font-size: 10.5px;
+      font-weight: 600;
+      color: var(--ink-muted);
+      margin-bottom: 4px;
+    }
+
+    .field-input {
+      width: 100%;
+      padding: 10px 11px;
+      border-radius: 10px;
+      background: var(--surface-100);
+      border: 1px solid var(--hairline);
+      color: var(--ink);
+      font-family: inherit;
+      font-size: 13px;
+      outline: none;
+    }
+
+    .field-input:focus {
+      border-color: var(--ouro);
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 28px;
+      padding-top: 16px;
+      border-top: 1px solid var(--hairline);
+      text-align: center;
+      font-size: 11.5px;
+      color: var(--ink-muted);
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--surface-100);
+      border: 1.5px solid var(--verde);
+      color: var(--ink);
+      padding: 12px 18px;
+      border-radius: 14px;
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.7);
+      z-index: 999;
+      display: none;
+      max-width: 92vw;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <!-- Top Header -->
+    <header class="header">
+      <div class="brand-row">
+        <div class="logo-squircle" aria-hidden="true">
+          <svg width="26" height="26" viewBox="0 0 32 32" fill="none">
+            <path d="M7 17.2L13.2 23.2L24.5 10.5" stroke="#C9A96B" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="24.5" cy="22.5" r="2.2" fill="#C9A96B"/>
+          </svg>
+        </div>
+        <div>
+          <h1 class="brand-title">Esse Compensa<span>!</span></h1>
+          <p class="brand-sub" id="subtituloHeader">Curadoria oficial • Preços auditados diariamente</p>
+        </div>
+      </div>
+      <div class="live-pill">
+        <span class="live-dot"></span>
+        <span>AUDITADO</span>
+      </div>
+    </header>
+
+    <!-- Transparency & Dated Offers Notice Banner -->
+    <aside class="audit-disclaimer" aria-label="Aviso sobre datas e disponibilidade das ofertas">
+      <span class="audit-disclaimer-icon">⏳</span>
+      <div style="flex:1;">
+        <p class="audit-disclaimer-text">
+          <strong>Importante:</strong> Os valores anunciados nos vídeos e posts referem-se à <strong>data da postagem original</strong> e estão sujeitos a alteração de lote ou esgotamento nas lojas. Nosso robô audita os links diariamente e registra o histórico abaixo.
+        </p>
+        <div class="audit-disclaimer-meta">
+          <span id="lblUltimaAuditoria">🔄 Checagem diária automática ativa</span>
+          <button class="btn-link-inline" onclick="abrirModalAlertaGeral()">🔔 Criar Alerta por E-mail</button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Dual Funnel Row -->
+    <nav class="funnel-grid" aria-label="Canais oficiais">
+      <a id="linkTelegramVip" href="https://t.me/essecompensa" target="_blank" rel="noopener" class="funnel-btn funnel-tg">
+        <span>🚀 Canal VIP Telegram</span>
+      </a>
+      <a id="linkInstagramBio" href="https://instagram.com/canalessecompensa" target="_blank" rel="noopener" class="funnel-btn funnel-ig">
+        <span>📸 @canalessecompensa</span>
+      </a>
+    </nav>
+
+    <!-- Switcher Tabs -->
+    <div class="mode-tabs" role="tablist">
+      <button id="tabOfertas" class="mode-tab active" onclick="mudarAba('ofertas')">
+        🔥 Ofertas (<span id="badgeCountOfertas">14</span>)
+      </button>
+      <button id="tabDicas" class="mode-tab" onclick="mudarAba('dicas')">
+        💡 Dicas (<span id="badgeCountDicas">3</span>)
+      </button>
+      <button id="tabAlertas" class="mode-tab" onclick="mudarAba('alertas')">
+        🔔 Alertas (<span id="badgeCountAlertas">0</span>)
+      </button>
+    </div>
+
+    <!-- OFERTAS SECTION -->
+    <section id="secOfertas">
+      <div class="search-wrap">
+        <span class="search-icon">🔎</span>
+        <input
+          id="inputBusca"
+          type="search"
+          class="search-input"
+          placeholder="Buscar modelo ou #código do Reel (ex: #14, iPhone)..."
+          oninput="renderizarOfertas()"
+        />
+        <button id="btnLimpar" class="search-clear" onclick="limparBusca()">Limpar</button>
+      </div>
+
+      <div class="chips-row">
+        <button class="chip active" data-filtro="todas" onclick="selecionarFiltro('todas')">Todas</button>
+        <button class="chip chip-green" data-filtro="menor_preco" onclick="selecionarFiltro('menor_preco')">📉 Menor Preço 90d</button>
+        <button class="chip" data-filtro="ate_1200" onclick="selecionarFiltro('ate_1200')">Até R$ 1.200</button>
+        <button class="chip" data-filtro="smartphones" onclick="selecionarFiltro('smartphones')">Smartphones</button>
+        <button class="chip" data-filtro="shopee" onclick="selecionarFiltro('shopee')">Shopee</button>
+        <button class="chip" data-filtro="ml" onclick="selecionarFiltro('ml')">Mercado Livre</button>
+      </div>
+
+      <div id="heroSlot"></div>
+      <div class="sec-label" id="listaTitulo">ÚLTIMAS OFERTAS VERIFICADAS</div>
+      <div id="listaSlot" class="offers-list"></div>
+    </section>
+
+    <!-- DICAS & GUIAS SECTION -->
+    <section id="secDicas" style="display: none;">
+      <div id="dicasSlot"></div>
+    </section>
+
+    <!-- MEUS ALERTAS DE PREÇO SECTION -->
+    <section id="secAlertas" style="display: none;">
+      <div id="alertasSlot"></div>
+    </section>
+
+    <footer class="footer">
+      <p><strong>Aviso Legal:</strong> As ofertas divulgadas refletem o preço vigente na data e hora de cada postagem e podem sofrer alterações ou esgotar sem aviso prévio pelas lojas parceiras.</p>
+      <p id="statusAtualizacao" style="margin-top: 6px; opacity: 0.85;">Histórico de preços e disponibilidade auditados diariamente • <strong>Esse Compensa!</strong></p>
+    </footer>
+  </main>
+
+  <!-- MODAL: HISTÓRICO DE PREÇOS & ALERTA POR E-MAIL -->
+  <div id="modalHistorico" class="modal-backdrop" onclick="fecharModalSeFundo(event)">
+    <div class="modal-sheet" role="dialog" aria-modal="true" aria-labelledby="modalProdTitulo">
+      <div class="modal-top">
+        <div>
+          <span id="modalBadgeCodigo" class="badge-code-hero" style="display:inline-block;margin-bottom:6px;">OFERTA #14</span>
+          <h3 id="modalProdTitulo" class="hero-title" style="margin-bottom:2px;">Produto</h3>
+          <p id="modalDatasInfo" style="font-size:11.5px;color:var(--ink-muted);"></p>
+        </div>
+        <button class="modal-close" onclick="fecharModalHistorico()" aria-label="Fechar">✕</button>
+      </div>
+
+      <!-- 3 Âncoras estilo CamelCamelCamel / Buscapé -->
+      <div class="stats-grid">
+        <div class="stat-box low">
+          <div class="stat-label">📉 Menor Visto</div>
+          <div id="statMenor" class="stat-val">R$ —</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">📊 Preço Médio</div>
+          <div id="statMedia" class="stat-val">R$ —</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-label">📈 Maior Preço</div>
+          <div id="statMaior" class="stat-val">R$ —</div>
+        </div>
+      </div>
+
+      <!-- Gráfico SVG de Linha do Tempo (Keepa / Zoom style) -->
+      <div class="chart-box">
+        <div class="chart-header">
+          <span>📈 Evolução de Preço Auditada</span>
+          <span id="chartStatusBadge" style="color:var(--verde);font-weight:700;"></span>
+        </div>
+        <div id="svgChartContainer"></div>
+      </div>
+
+      <!-- Formulário de Alerta de Queda de Preço por E-mail -->
+      <div class="alert-form-box">
+        <div class="alert-form-title">🔔 Alerta de Queda de Preço por E-mail</div>
+        <p class="alert-form-sub">
+          Achou caro ou o lote acabou? Defina quanto quer pagar e nosso robô avisa você por e-mail assim que baixar:
+        </p>
+
+        <div id="targetPillsContainer" class="target-pills"></div>
+
+        <div class="form-row-2">
+          <div>
+            <label class="field-label" for="inputPrecoAlvo">Avisar abaixo de (R$)</label>
+            <input id="inputPrecoAlvo" type="number" step="1" class="field-input" oninput="atualizarLinhaMetaGrafico()" />
+          </div>
+          <div>
+            <label class="field-label" for="inputEmailAlerta">Seu melhor e-mail</label>
+            <input id="inputEmailAlerta" type="email" placeholder="voce@email.com" class="field-input" />
+          </div>
+        </div>
+
+        <button class="btn-cta-gold" style="width:100%;" onclick="salvarAlertaEmailModal()">
+          🔔 Ativar Alerta Grátis por E-mail
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toastMsg" class="toast"></div>
+
+  <script>
+    /*__FALLBACK_START__*/const FALLBACK_CATALOGO = {"atualizado_em": "2026-11-16 20:08:56", "vitrine_url": "https://essecompensa.vercel.app", "config": {"titulo": "Esse Compensa!", "subtitulo": "Curadoria oficial • Preços auditados", "telegram_url": "https://t.me/essecompensa", "instagram_url": "https://instagram.com/canalessecompensa", "dias_expiracao_automatica": 7}, "proximo_numero": 15, "ofertas": [{"codigo": "#14", "numero": 14, "titulo": "Motorola Moto G17 256 GB · Roxo", "loja": "SHOPEE OFICIAL · WEBFONES", "plataforma": "shopee", "categoria": "smartphones", "preco_antigo": "R$ 1.458", "preco_atual": "R$ 1.449,99", "desconto": "-1%", "desconto_pct": 1, "cupom": "No App Shopee", "url_afiliado": "https://s.shopee.com.br/60T9Asjv4G", "imagem": "img/oferta_14.png", "menor_preco_90d": false, "selo_historico": "Menor preço em 90 dias", "destaque_topo": true, "esgotado": false, "publicado_em": "2026-11-13 20:33:38", "preco_postagem": "R$ 1.049,99", "verificado_em": "2026-11-16 20:08:19", "status_disponibilidade": "preco_subiu", "variacao_postagem_txt": "No post original: R$ 1.049,99", "estatisticas_preco": {"menor": 1049.99, "menor_fmt": "R$ 1.049,99", "media": 1183.32, "media_fmt": "R$ 1.183,32", "maior": 1458.0, "maior_fmt": "R$ 1.458", "total_coletas": 3}, "historico_pontos": [{"data": "Ref. Tabela", "data_curta": "Tabela", "preco": 1458.0, "preco_fmt": "R$ 1.458"}, {"data": "2026-11-13 20:33", "data_curta": "13/11 (Post)", "preco": 1049.99, "preco_fmt": "R$ 1.049,99"}, {"data": "2026-11-14 01:00", "data_curta": "14/11", "preco": 1049.99, "preco_fmt": "R$ 1.049,99"}, {"data": "2026-11-16 20:08", "data_curta": "16/11", "preco": 1449.99, "preco_fmt": "R$ 1.449,99"}], "motivo_status": ""}, {"codigo": "#13", "numero": 13, "titulo": "Apple iPhone 16 128 GB · Branco", "loja": "MERCADO LIVRE · LOJA OFICIAL APPLE", "plataforma": "ml", "categoria": "smartphones", "preco_antigo": "R$ 8.650", "preco_atual": "R$ 4.801", "desconto": "-44%", "desconto_pct": 44, "cupom": "", "url_afiliado": "https://meli.la/2nQXLpZ", "imagem": "img/oferta_13.png", "menor_preco_90d": false, "selo_historico": "R$ 4.101 abaixo da tabela", "destaque_topo": false, "esgotado": false, "publicado_em": "2026-11-09 11:00:51", "preco_postagem": "R$ 4.549", "verificado_em": "2026-11-16 20:08:19", "status_disponibilidade": "preco_subiu", "variacao_postagem_txt": "No post original: R$ 4.549", "estatisticas_preco": {"menor": 4549.0, "menor_fmt": "R$ 4.549", "media": 4675.0, "media_fmt": "R$ 4.675", "maior": 8650.0, "maior_fmt": "R$ 8.650", "total_coletas": 2}, "historico_pontos": [{"data": "Ref. Tabela", "data_curta": "Tabela", "preco": 8650.0, "preco_fmt": "R$ 8.650"}, {"data": "2026-11-09 11:00", "data_curta": "09/11 (Post)", "preco": 4549.0, "preco_fmt": "R$ 4.549"}, {"data": "2026-11-16 20:08", "data_curta": "16/11", "preco": 4801.0, "preco_fmt": "R$ 4.801"}], "motivo_status": ""}, {"codigo": "#12", "numero": 12, "titulo": "Samsung Galaxy A56 5G 256 GB · Cinza", "loja": "MERCADO LIVRE · VIKINGS", "plataforma": "ml", "categoria": "smartphones", "preco_antigo": "R$ 3.999", "preco_atual": "R$ 2.532", "desconto": "-37%", "desconto_pct": 37, "cupom": "", "url_afiliado": "https://meli.la/1EzAGc4", "imagem": "img/oferta_12.png", "menor_preco_90d": false, "selo_historico": "Menor preço histórico", "destaque_topo": false, "esgotado": false, "publicado_em": "2026-11-07 19:24:12", "preco_postagem": "R$ 2.199", "verificado_em": "2026-11-16 20:08:19", "status_disponibilidade": "preco_subiu", "variacao_postagem_txt": "No post original: R$ 2.199", "estatisticas_preco": {"menor": 2199.0, "menor_fmt": "R$ 2.199", "media": 2365.5, "media_fmt": "R$ 2.365,50", "maior": 3999.0, "maior_fmt": "R$ 3.999", "total_coletas": 2}, "historico_pontos": [{"data": "Ref. Tabela", "data_curta": "Tabela", "preco": 3999.0, "preco_fmt": "R$ 3.999"}, {"data": "2026-11-07 19:24", "data_curta": "07/11 (Post)", "preco": 2199.0, "preco_fmt": "R$ 2.199"}, {"data": "2026-11-16 20:08", "data_curta": "16/11", "preco": 2532.0, "preco_fmt": "R$ 2.532"}], "motivo_status": ""}, {"codigo": "#11", "numero": 11, "titulo": "Motorola Moto G37 5G 128 GB · Grafite", "loja": "MERCADO LIVRE · LOJA OFICIAL MOTOROLA", "plataforma": "ml", "categoria": "smartphones", "preco_antigo": "R$ 2.099", "preco_atual": "R$ 1.079", "desconto": "-49%", "desconto_pct": 49, "cupom": "", "url_afiliado": "https://meli.la/13q3zwi", "imagem": "img/oferta_11.png", "menor_preco_90d": false, "selo_historico": "Menor preço registrado", "destaque_topo": false, "esgotado": false, "publicado_em": "2026-11-11 22:03:09", "preco_postagem": "R$ 989", "verificado_em": "2026-11-16 20:08:19", "status_disponibilidade": "preco_subiu", "variacao_postagem_txt": "No post original: R$ 989", "estatisticas_preco": {"menor": 989.0, "menor_fmt": "R$ 989", "media": 1011.52, "media_fmt": "R$ 1.011,52", "maior": 2099.0, "maior_fmt": "R$ 2.099", "total_coletas": 4}, "historico_pontos": [{"data": "Ref. Tabela", "data_curta": "Tabela", "preco": 2099.0, "preco_fmt": "R$ 2.099"}, {"data": "2026-11-11 22:03", "data_curta": "11/11 (Post)", "preco": 989.0, "preco_fmt": "R$ 989"}, {"data": "2026-11-09 11:06", "data_curta": "09/11", "preco": 989.1, "preco_fmt": "R$ 989,10"}, {"data": "2026-11-11 22:03", "data_curta": "11/11", "preco": 989.0, "preco_fmt": "R$ 989"}, {"data": "2026-11-16 20:08", "data_curta": "16/11", "preco": 1079.0, "preco_fmt": "R$ 1.079"}], "motivo_status": ""}, {"codigo": "#10", "numero": 10, "titulo": "Xiaomi Redmi Note 15 256 GB", "loja": "MERCADO LIVRE · OFICIAL", "plataforma": "ml", "categoria": "smartphones", "preco_antigo": "R$ 2.500", "preco_atual": "R$ 1.659", "desconto": "-34%", "desconto_pct": 34, "cupom": "", "url_afiliado": "https://meli.la/2o9cugw", "imagem": "img/oferta_10.png", "menor_preco_90d": false, "selo_historico": "Menor preço em 90 dias", "destaque_topo": false, "esgotado": false, "publicado_em": "2026-11-08 12:47:41", "preco_postagem": "R$ 1.461", "verificado_em": "2026-11-16 20:08:19", "status_disponibilidade": "preco_subiu", "variacao_postagem_txt": "No post original: R$ 1.461", "estatisticas_preco": {"menor": 1461.0, "menor_fmt": "R$ 1.461", "media": 1560.0, "media_fmt": "R$ 1.560", "maior": 2500.0, "maior_fmt": "R$ 2.500", "total_coletas": 2}, "historico_pontos": [{"data": "Ref. Tabela", "data_curta": "Tabela", "preco": 2500.0, "preco_fmt": "R$ 2.500"}, {"data": "2026-11-08 12:47", "data_curta": "08/11 (Post)", "preco": 1461.0, "preco_fmt": "R$ 1.461"}, {"data": "2026-11-16 20:08", "data_curta": "16/11", "preco": 1659.0, "preco_fmt": "R$ 1.659"}], "motivo_status": ""}, {"codigo": "#09", "numero": 9, "titulo": "Smartwatch NOVANTE Air R1 Esportivo GPS", "loja": "MERCADO LIVRE · OFICIAL", "plataforma": "ml", "categoria": "acessorios", "preco_antigo": "R$ 299", "preco_atual": "R$ 135,99", "desconto": "-55%", "desconto_pct": 55, "cupom": "", "url_afiliado": "https://meli.la/1YuMhkc", "imagem": "img/oferta_09.png", "menor_preco_90d": false, "selo_historico": "Campeão até R$ 150", "destaque_topo": false, "esgotado": false, "publicado_em": "2026-11-08 12:44:34", "preco_postagem": "R$ 133,99", "verificado_em": "2026-11-16 20:08:19", "status_disponibilidade": "preco_subiu", "variacao_postagem_txt": "No post original: R$ 133,99", "estatisticas_preco": {"menor": 133.99, "menor_fmt": "R$ 133,99", "media": 134.99, "media_fmt": "R$ 134,99", "maior": 299.0, "maior_fmt": "R$ 299", "total_coletas": 2}, "historico_pontos": [{"data": "Ref. Tabela", "data_curta": "Tabela", "preco": 299.0, "preco_fmt": "R$ 299"}, {"data": "2026-11-08 12:44", "data_curta": "08/11 (Post)", "preco": 133.99, "preco_fmt": "R$ 133,99"}, {"data": "2026-11-16 20:08", "data_curta": "16/11", "preco": 135.99, "preco_fmt": "R$ 135,99"}], "motivo_status": ""}, {"codigo": "#08", "numero": 8, "titulo": "Fone de Ouvido Sem Fio PODSPRO 6 Estéreo", "loja": "SHOPEE · CHERRYGO1.BR", "plataforma": "shopee", "categoria": "acessorios", "preco_antigo": "R$ 99,95", "preco_atual": "R$ 42,98", "desconto": "-57%", "desconto_pct": 57, "cupom": "Frete Grátis no App", "url_afiliado": "https://s.shopee.com.br/2gCfakxZiK", "imagem": "img/oferta_08.png", "menor_preco_90d": false, "selo_historico": "Achadinho abaixo de R$ 45", "destaque_topo": false, "esgotado": false, "publicado_em": "2026-11-12 20:18:49", "preco_postagem": "R$ 42,98", "verificado_em": "2026-11-16 20:08:19", "status_disponibilidade": "disponivel", "variacao_postagem_txt": " Mesmo valor da postagem", "estatisticas_preco": {"menor": 42.98, "menor_fmt": "R$ 42,98", "media": 42.98, "media_fmt": "R$ 42,98", "maior": 99.95, "maior_fmt": "R$ 99,95", "total_coletas": 2}, "historico_pontos": [{"data": "Ref. Tabela", "data_curta": "Tabela", "preco": 99.95, "preco_fmt": "R$ 99,95"}, {"data": "2026-11-12 20:18", "data_curta": "12/11 (Post)", "preco": 42.98, "preco_fmt": "R$ 42,98"}, {"data": "2026-11-16 20:08", "data_curta": "16/11", "preco": 42.98, "preco_fmt": "R$ 42,98"}], "motivo_status": ""}, {"codigo": "#07", "numero": 7, "titulo": "Samsung Galaxy S26 Ultra 5G Dual Sim", "loja": "MERCADO LIVRE · VENDIDO POR SAMSUNG", "plataforma": "ml", "categoria": "smartphones", "preco_antigo": "R$ 11.999", "preco_atual": "R$ 6.760", "desconto": "-44%", "desconto_pct": 44, "cupom": "", "url_afiliado": "https://meli.la/2KTGb7Y", "imagem": "img/oferta_07.png", "menor_preco_90d": false, "selo_historico": "Topo de linha com 45% OFF", "destaque_topo": false, "esgotado": false, "publicado_em": "2026-11-07 23:04:28", "preco_postagem": "R$ 6.569", "verificado_em": "2026-11-16 20:08:19", "status_disponibilidade": "preco_subiu", "variacao_postagem_txt": "No post original: R$ 6.569", "estatisticas_preco": {"menor": 6569.0, "menor_fmt": "R$ 6.569", "media": 6664.5, "media_fmt": "R$ 6.664,50", "maior": 11999.0, "maior_fmt": "R$ 11.999", "total_coletas": 2}, "historico_pontos": [{"data": "Ref. Tabela", "data_curta": "Tabela", "preco": 11999.0, "preco_fmt": "R$ 11.999"}, {"data": "2026-11-07 23:04", "data_curta": "07/11 (Post)", "preco": 6569.0, "preco_fmt": "R$ 6.569"}, {"data": "2026-11-16 20:08", "data_curta": "16/11", "preco": 6760.0, "preco_fmt": "R$ 6.760"}], "motivo_status": ""}, {"codigo": "#06", "numero": 6, "titulo": "Apple iPhone 17 256 GB · Branco", "loja": "MERCADO LIVRE · LOJA OFICIAL APPLE", "plataforma": "ml", "categoria": "smartphones", "preco_antigo": "R$ 7.999", "preco_atual": "R$ 5.683", "desconto": "-29%", "desconto_pct": 29, "cupom": "", "url_afiliado": "https://meli.la/2yMr7Jo", "imagem": "img/oferta_06.png", "menor_preco_90d": false, "selo_historico": "256 GB verificado", "destaque_topo": false, "esgotado": false, "publicado_em": "2026-11-06 20:18:52", "preco_postagem": "R$ 5.651", "verificado_em": "2026-11-16 20:08:19", "status_disponibilidade": "preco_subiu", "variacao_postagem_txt": "No post original: R$ 5.651", "estatisticas_preco": {"menor": 5651.0, "menor_fmt": "R$ 5.651", "media": 5667.0, "media_fmt": "R$ 5.667", "maior": 7999.0, "maior_fmt": "R$ 7.999", "total_coletas": 2}, "historico_pontos": [{"data": "Ref. Tabela", "data_curta": "Tabela", "preco": 7999.0, "preco_fmt": "R$ 7.999"}, {"data": "2026-11-06 20:18", "data_curta": "06/11 (Post)", "preco": 5651.0, "preco_fmt": "R$ 5.651"}, {"data": "2026-11-16 20:08", "data_curta": "16/11", "preco": 5683.0, "preco_fmt": "R$ 5.683"}], "motivo_status": ""}, {"codigo": "#05", "numero": 5, "titulo": "Samsung Galaxy S21 Plus 5G 128 GB", "loja": "MERCADO LIVRE · GYNCELL", "plataforma": "ml", "categoria": "smartphones", "preco_antigo": "R$ 3.500", "preco_atual": "R$ 3.500", "desconto": "-15%", "desconto_pct": 15, "cupom": "", "url_afiliado": "https://meli.la/2MobkbA", "imagem": "img/oferta_05.png", "menor_preco_90d": false, "selo_historico": "Preço verificado", "destaque_topo": false, "esgotado": false, "publicado_em": "2026-11-08 12:45:30", "preco_postagem": "R$ 2.975", "verificado_em": "2026-11-16 20:08:19", "status_disponibilidade": "preco_subiu", "variacao_postagem_txt": "No post original: R$ 2.975", "estatisticas_preco": {"menor": 2975.0, "menor_fmt": "R$ 2.975", "media": 3237.5, "media_fmt": "R$ 3.237,50", "maior": 3500.0, "maior_fmt": "R$ 3.500", "total_coletas": 2}, "historico_pontos": [{"data": "Ref. Tabela", "data_curta": "Tabela", "preco": 3500.0, "preco_fmt": "R$ 3.500"}, {"data": "2026-11-08 12:45", "data_curta": "08/11 (Post)", "preco": 2975.0, "preco_fmt": "R$ 2.975"}, {"data": "2026-11-16 20:08", "data_curta": "16/11", "preco": 3500.0, "preco_fmt": "R$ 3.500"}], "motivo_status": ""}, {"codigo": "#04", "numero": 4, "titulo": "Smartphone Realme Note 80s 256 GB", "loja": "MERCADO LIVRE", "plataforma": "ml", "categoria": "smartphones", "preco_antigo": "R$ 1.599", "preco_atual": "R$ 1.219", "desconto": "-24%", "desconto_pct": 24, "cupom": "", "url_afiliado": "https://meli.la/2EitkFe", "imagem": "img/oferta_04.png", "menor_preco_90d": false, "selo_historico": "256 GB abaixo de R$ 1.250", "destaque_topo": false, "esgotado": false, "publicado_em": "2026-11-08 05:11:31", "preco_postagem": "R$ 1.219", "verificado_em": "2026-11-08 05:11:31", "status_disponibilidade": "disponivel", "variacao_postagem_txt": "Preço confirmado na verificação", "estatisticas_preco": {"menor": 1219.0, "menor_fmt": "R$ 1.219", "media": 1219.0, "media_fmt": "R$ 1.219", "maior": 1599.0, "maior_fmt": "R$ 1.599", "total_coletas": 1}, "historico_pontos": [{"data": "Ref. Tabela", "data_curta": "Tabela", "preco": 1599.0, "preco_fmt": "R$ 1.599"}, {"data": "2026-11-08 05:11", "data_curta": "08/11 (Post)", "preco": 1219.0, "preco_fmt": "R$ 1.219"}]}, {"codigo": "#03", "numero": 3, "titulo": "Samsung Galaxy A17 5G 128 GB", "loja": "MERCADO LIVRE · LOJA OFICIAL", "plataforma": "ml", "categoria": "smartphones", "preco_antigo": "R$ 1.855", "preco_atual": "R$ 999", "desconto": "-46%", "desconto_pct": 46, "cupom": "", "url_afiliado": "https://meli.la/2o3JQst", "imagem": "img/oferta_03.png", "menor_preco_90d": false, "selo_historico": "5G abaixo de R$ 1.000", "destaque_topo": false, "esgotado": false, "publicado_em": "2026-11-07 22:57:03", "preco_postagem": "R$ 989", "verificado_em": "2026-11-16 20:08:19", "status_disponibilidade": "preco_subiu", "variacao_postagem_txt": "No post original: R$ 989", "estatisticas_preco": {"menor": 989.0, "menor_fmt": "R$ 989", "media": 991.52, "media_fmt": "R$ 991,52", "maior": 1855.0, "maior_fmt": "R$ 1.855", "total_coletas": 4}, "historico_pontos": [{"data": "Ref. Tabela", "data_curta": "Tabela", "preco": 1855.0, "preco_fmt": "R$ 1.855"}, {"data": "2026-11-07 22:57", "data_curta": "07/11 (Post)", "preco": 989.0, "preco_fmt": "R$ 989"}, {"data": "2026-11-06 19:33", "data_curta": "06/11", "preco": 989.0, "preco_fmt": "R$ 989"}, {"data": "2026-11-07 22:57", "data_curta": "07/11", "preco": 989.1, "preco_fmt": "R$ 989,10"}, {"data": "2026-11-16 20:08", "data_curta": "16/11", "preco": 999.0, "preco_fmt": "R$ 999"}], "motivo_status": ""}, {"codigo": "#02", "numero": 2, "titulo": "Samsung Galaxy A07 128 GB · Preto", "loja": "MERCADO LIVRE · VENDIDO POR SAMSUNG", "plataforma": "ml", "categoria": "smartphones", "preco_antigo": "R$ 1.049", "preco_atual": "R$ 799", "desconto": "-24%", "desconto_pct": 24, "cupom": "", "url_afiliado": "https://meli.la/1qg4Vuk", "imagem": "img/oferta_02.png", "menor_preco_90d": false, "selo_historico": "Básico confiável 128 GB", "destaque_topo": false, "esgotado": false, "publicado_em": "2026-11-08 05:09:52", "preco_postagem": "R$ 718,20", "verificado_em": "2026-11-16 20:08:19", "status_disponibilidade": "preco_subiu", "variacao_postagem_txt": "No post original: R$ 718,20", "estatisticas_preco": {"menor": 718.2, "menor_fmt": "R$ 718,20", "media": 758.6, "media_fmt": "R$ 758,60", "maior": 1049.0, "maior_fmt": "R$ 1.049", "total_coletas": 2}, "historico_pontos": [{"data": "Ref. Tabela", "data_curta": "Tabela", "preco": 1049.0, "preco_fmt": "R$ 1.049"}, {"data": "2026-11-08 05:09", "data_curta": "08/11 (Post)", "preco": 718.2, "preco_fmt": "R$ 718,20"}, {"data": "2026-11-16 20:08", "data_curta": "16/11", "preco": 799.0, "preco_fmt": "R$ 799"}], "motivo_status": ""}, {"codigo": "#01", "numero": 1, "titulo": "Motorola Moto G06 64 GB", "loja": "MERCADO LIVRE · LOJA OFICIAL", "plataforma": "ml", "categoria": "smartphones", "preco_antigo": "R$ 1.299", "preco_atual": "R$ 628,20", "desconto": "-52%", "desconto_pct": 52, "cupom": "", "url_afiliado": "https://meli.la/26493KF", "imagem": "img/oferta_01.png", "menor_preco_90d": true, "selo_historico": "Menor preço histórico", "destaque_topo": false, "esgotado": false, "publicado_em": "2026-11-06 19:33:59", "preco_postagem": "R$ 629", "verificado_em": "2026-11-16 20:08:19", "status_disponibilidade": "preco_caiu", "variacao_postagem_txt": "Caiu R$ 0,80 desde a postagem", "estatisticas_preco": {"menor": 628.2, "menor_fmt": "R$ 628,20", "media": 628.6, "media_fmt": "R$ 628,60", "maior": 1299.0, "maior_fmt": "R$ 1.299", "total_coletas": 2}, "historico_pontos": [{"data": "Ref. Tabela", "data_curta": "Tabela", "preco": 1299.0, "preco_fmt": "R$ 1.299"}, {"data": "2026-11-06 19:33", "data_curta": "06/11 (Post)", "preco": 629.0, "preco_fmt": "R$ 629"}, {"data": "2026-11-16 20:08", "data_curta": "16/11", "preco": 628.2, "preco_fmt": "R$ 628,20"}], "motivo_status": ""}], "dicas": [{"id": "G3", "tag": "📸 DICA DE CÂMERA · REELS", "cor": "ouro", "titulo": "O segredo do 'solzinho' para fotos noturnas de cinema", "resumo": "Toque no ponto mais iluminado da tela e deslize o controle de exposição levemente para baixo antes do clique. Evita luz estourada e preserva o contraste.", "codigo_oferta": "#14", "texto_cta": "Ver aparelho usado no vídeo: Moto G17 256 GB (#14)", "publicado_em": "2026-11-13 21:00:00"}, {"id": "G2", "tag": "🧠 GUIA DE COMPRA INTELIGENTE", "cor": "titanio", "titulo": "RAM Física vs. RAM Virtual: não pague caro por marketing", "resumo": "Muitos anúncios somam 'RAM Boost' como se fosse memória real. Para rodar tudo liso por 3 anos, exija 8 GB físicos + armazenamento rápido UFS.", "codigo_oferta": "#12", "texto_cta": "Ver destaque 8 GB + 5G: Galaxy A56 256 GB (#12)", "publicado_em": "2026-11-12 19:30:00"}, {"id": "G1", "tag": "⚡ USO NO DIA A DIA", "cor": "verde", "titulo": "Top celulares com NFC e bateria para 2 dias até R$ 1.500", "resumo": "Seleção com os aparelhos que aguentam rotina pesada de trabalho, GPS, pagamentos por aproximação no balcão e tela legível sob sol forte.", "codigo_oferta": "#10", "texto_cta": "Ver campeão de bateria: Redmi Note 15 256 GB (#10)", "publicado_em": "2026-11-11 18:00:00"}], "ultima_auditoria_automatica": "2026-11-16 20:08:19"};/*__FALLBACK_END__*/
+
+    let CATALOGO = FALLBACK_CATALOGO;
+    let FILTRO_ATUAL = "todas";
+    let OFERTA_MODAL_ATUAL = null;
+
+    function exibirToast(texto) {
+      const el = document.getElementById("toastMsg");
+      el.textContent = texto;
+      el.style.display = "block";
+      clearTimeout(window.__tTimer);
+      window.__tTimer = setTimeout(() => { el.style.display = "none"; }, 3200);
+    }
+
+    function parseReais(str) {
+      if (typeof str === "number") return str;
+      if (!str) return 999999;
+      let limpo = String(str).replace(/[^\d.,]/g, "").trim();
+      if (limpo.includes(",")) {
+        limpo = limpo.replace(/\./g, "").replace(",", ".");
+      } else if (/^\d+\.\d{3}$/.test(limpo)) {
+        limpo = limpo.replace(/\./g, "");
+      }
+      const val = parseFloat(limpo);
+      return isNaN(val) ? 999999 : val;
+    }
+
+    function formatarMoedaBR(val) {
+      const n = Number(val || 0);
+      if (!n || isNaN(n)) return "R$ —";
+      const temCentavos = Math.abs(n - Math.round(n)) > 0.01;
+      return "R$ " + n.toLocaleString("pt-BR", {
+        minimumFractionDigits: temCentavos ? 2 : 0,
+        maximumFractionDigits: 2
+      });
+    }
+
+    function formatarDataHoraBR(isoStr, curto) {
+      if (!isoStr) return "Data não informada";
+      const s = String(isoStr).trim();
+      const m = s.match(/^(\d{4})-(\d{2})-(\d{2})(?:\s+(\d{2}):(\d{2}))?/);
+      if (!m) return s;
+      const dia = m[3], mes = m[2], ano = m[1].slice(2), hora = m[4] || "00", min = m[5] || "00";
+      if (curto) return `${dia}/${mes}/${ano} às ${hora}:${min}`;
+      return `${dia}/${mes}/${m[1]} às ${hora}:${min}`;
+    }
+
+    function obterBadgeDisponibilidade(o) {
+      if (o.esgotado || o.status_disponibilidade === "esgotado") {
+        return { classe: "badge-esgotado", texto: "⏳ Lote encerrado / Indisponível" };
+      }
+      const pAtual = parseReais(o.preco_atual);
+      const pPost = parseReais(o.preco_postagem || o.preco_atual);
+      if (pPost < 999999 && pAtual < pPost - 0.5) {
+        const diff = formatarMoedaBR(pPost - pAtual);
+        return { classe: "badge-green", texto: `🔥 Caiu ${diff} após a postagem!` };
+      }
+      if (pPost < 999999 && pAtual > pPost + 0.5) {
+        return { classe: "badge-warn", texto: `⚠️ Subiu após o post (era ${o.preco_postagem})` };
+      }
+      return { classe: "badge-green", texto: "✅ Disponível • Preço confirmado" };
+    }
+
+    function carregarAlertasLocais() {
+      try {
+        const raw = localStorage.getItem("ec_alertas_preco_v1");
+        return raw ? JSON.parse(raw) : [];
+      } catch (_) {
+        return [];
+      }
+    }
+
+    function salvarAlertasLocais(lista) {
+      try {
+        localStorage.setItem("ec_alertas_preco_v1", JSON.stringify(lista));
+      } catch (_) {}
+      atualizarContadorAlertas();
+    }
+
+    function atualizarContadorAlertas() {
+      const al = carregarAlertasLocais();
+      const el = document.getElementById("badgeCountAlertas");
+      if (el) el.textContent = al.length;
+    }
+
+    function mudarAba(aba) {
+      const secO = document.getElementById("secOfertas");
+      const secD = document.getElementById("secDicas");
+      const secA = document.getElementById("secAlertas");
+      const bO = document.getElementById("tabOfertas");
+      const bD = document.getElementById("tabDicas");
+      const bA = document.getElementById("tabAlertas");
+
+      secO.style.display = aba === "ofertas" ? "block" : "none";
+      secD.style.display = aba === "dicas" ? "block" : "none";
+      secA.style.display = aba === "alertas" ? "block" : "none";
+
+      bO.classList.toggle("active", aba === "ofertas");
+      bD.classList.toggle("active", aba === "dicas");
+      bA.classList.toggle("active", aba === "alertas");
+
+      if (aba === "alertas") renderizarMeusAlertas();
+    }
+
+    function selecionarFiltro(f) {
+      FILTRO_ATUAL = f;
+      document.querySelectorAll(".chip").forEach(btn => {
+        if (btn.getAttribute("data-filtro") === f) btn.classList.add("active");
+        else btn.classList.remove("active");
+      });
+      renderizarOfertas();
+    }
+
+    function limparBusca() {
+      document.getElementById("inputBusca").value = "";
+      if (history.replaceState) history.replaceState(null, "", window.location.pathname);
+      selecionarFiltro("todas");
+    }
+
+    function irParaCodigo(codigo) {
+      mudarAba("ofertas");
+      document.getElementById("inputBusca").value = codigo;
+      selecionarFiltro("todas");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function acionarOferta(url, cupom, codigo) {
+      if (cupom && cupom.length <= 18 && !cupom.toLowerCase().includes("no app")) {
+        if (navigator.clipboard) {
+          navigator.clipboard.writeText(cupom).catch(() => {});
+        }
+        exibirToast("✓ Cupom " + cupom + " copiado! Abrindo oferta " + codigo + "...");
+        setTimeout(() => { window.open(url, "_blank", "noopener"); }, 450);
+      } else {
+        window.open(url, "_blank", "noopener");
+      }
+    }
+
+    function renderizarOfertas() {
+      const input = document.getElementById("inputBusca");
+      const q = (input.value || "").trim().toLowerCase();
+      document.getElementById("btnLimpar").style.display = q ? "block" : "none";
+
+      const todas = CATALOGO.ofertas || [];
+      document.getElementById("badgeCountOfertas").textContent = todas.length;
+
+      const filtradas = todas.filter(o => {
+        if (FILTRO_ATUAL === "menor_preco" && !o.menor_preco_90d) return false;
+        if (FILTRO_ATUAL === "ate_1200" && parseReais(o.preco_atual) > 1200) return false;
+        if (FILTRO_ATUAL === "smartphones" && o.categoria !== "smartphones") return false;
+        if (FILTRO_ATUAL === "shopee" && o.plataforma !== "shopee") return false;
+        if (FILTRO_ATUAL === "ml" && o.plataforma !== "ml") return false;
+        if (!q) return true;
+        const qNum = q.replace("#", "");
+        return (
+          (o.codigo || "").toLowerCase().includes(q) ||
+          String(o.numero) === qNum ||
+          (o.titulo || "").toLowerCase().includes(q) ||
+          (o.loja || "").toLowerCase().includes(q)
+        );
+      });
+
+      const heroSlot = document.getElementById("heroSlot");
+      const listaSlot = document.getElementById("listaSlot");
+      const listaTitulo = document.getElementById("listaTitulo");
+
+      if (filtradas.length === 0) {
+        heroSlot.innerHTML = "";
+        listaTitulo.textContent = "NENHUM RESULTADO";
+        listaSlot.innerHTML = `
+          <div class="guide-card" style="text-align:center;">
+            <p class="guide-title">Nenhuma oferta encontrada para "${q}"</p>
+            <p class="guide-body">Tente digitar apenas o número citado no vídeo (ex: #14) ou limpar os filtros.</p>
+            <button class="btn-cta-gold" onclick="limparBusca()">Mostrar todas as ofertas</button>
+          </div>
+        `;
+        return;
+      }
+
+      const mostrarHero = (FILTRO_ATUAL === "todas") || q.length > 0;
+      let inicioLista = 0;
+
+      if (mostrarHero) {
+        const h = filtradas[0];
+        inicioLista = 1;
+        const temCupom = Boolean(h.cupom && h.cupom.trim());
+        const disp = obterBadgeDisponibilidade(h);
+        const dtPost = formatarDataHoraBR(h.publicado_em, true);
+        const dtVerif = formatarDataHoraBR(h.verificado_em || h.publicado_em, true);
+
+        heroSlot.innerHTML = `
+          <article class="hero-card">
+            <div class="hero-badges">
+              <span class="badge-code-hero">LINK ${h.codigo} • ${q ? 'OFERTA LOCALIZADA' : 'DESTAQUE NO REELS / STORY'}</span>
+              <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap;">
+                <span class="${disp.classe}">${disp.texto}</span>
+                ${h.menor_preco_90d && !h.esgotado ? `<span class="badge-green">📉 ${h.selo_historico || 'MENOR PREÇO 90D'}</span>` : ''}
+              </div>
+            </div>
+            <div class="hero-body">
+              <div class="hero-img-box">
+                <img src="${h.imagem}" alt="${h.titulo}" onerror="this.style.display='none'" />
+              </div>
+              <div style="flex:1;min-width:0;">
+                <div class="store-tag">${h.loja}</div>
+                <h2 class="hero-title">${h.titulo}</h2>
+                <div class="price-row">
+                  ${h.preco_antigo ? `<span class="old-price">${h.preco_antigo}</span>` : ''}
+                  <span class="now-price-hero">${h.preco_atual}</span>
+                  ${h.desconto ? `<span class="discount-pill">${h.desconto} OFF</span>` : ''}
+                </div>
+                ${temCupom ? `<div style="font-size:11.5px;color:var(--ouro);margin-top:4px;font-weight:600;">🎟️ ${h.cupom}</div>` : ''}
+              </div>
+            </div>
+
+            <div class="timestamps-box">
+              <span class="ts-item">📅 Postado em: <strong>${dtPost}</strong> ${h.preco_postagem ? `(${h.preco_postagem})` : ''}</span>
+              <span class="ts-item">🔄 Verificado: <strong>${dtVerif}</strong></span>
+            </div>
+
+            <div class="hero-actions">
+              <button class="btn-hist-alert" onclick="abrirModalHistorico('${h.codigo}')">
+                📈 Histórico &amp; 🔔 Alerta
+              </button>
+              <button class="btn-cta-gold" onclick="acionarOferta('${h.url_afiliado}', '${h.cupom || ''}', '${h.codigo}')">
+                <span>${h.esgotado ? 'Conferir Anúncio →' : 'Pegar Oferta Oficial →'}</span>
+              </button>
+            </div>
+          </article>
+        `;
+      } else {
+        heroSlot.innerHTML = "";
+      }
+
+      const restantes = filtradas.slice(inicioLista);
+      listaTitulo.style.display = restantes.length ? "block" : "none";
+      listaTitulo.textContent = q ? `MAIS RESULTADOS (${restantes.length})` : `CATÁLOGO COMPLETO (${restantes.length})`;
+
+      listaSlot.innerHTML = restantes.map(o => {
+        const disp = obterBadgeDisponibilidade(o);
+        const dtPostCurta = formatarDataHoraBR(o.publicado_em, true);
+        const dtVerifCurta = formatarDataHoraBR(o.verificado_em || o.publicado_em, true);
+        return `
+          <div class="offer-card">
+            <div class="offer-card-main" onclick="acionarOferta('${o.url_afiliado}', '${o.cupom || ''}', '${o.codigo}')">
+              <div class="offer-thumb">
+                <span class="code-badge-sm">${o.codigo}</span>
+                <img src="${o.imagem}" alt="${o.titulo}" loading="lazy" onerror="this.style.display='none'" />
+              </div>
+              <div class="offer-info">
+                <div class="store-tag">${o.loja} ${o.menor_preco_90d && !o.esgotado ? '<span style="color:var(--verde);">• Menor 90d</span>' : ''}</div>
+                <div class="offer-title">${o.titulo}</div>
+                <div class="price-row">
+                  ${o.preco_antigo ? `<span class="old-price">${o.preco_antigo}</span>` : ''}
+                  <span class="now-price-sm">${o.preco_atual}</span>
+                  ${o.desconto ? `<span class="discount-pill">${o.desconto}</span>` : ''}
+                </div>
+              </div>
+              <button class="offer-btn ${o.esgotado ? 'esgotado' : ''}">${o.esgotado ? 'Esgotado' : 'Abrir →'}</button>
+            </div>
+            <div class="offer-card-footer">
+              <div class="offer-dates">
+                <span>📅 Post: <strong style="color:var(--ink);">${dtPostCurta}</strong></span>
+                <span>• 🔄 Verif.: ${dtVerifCurta}</span>
+                <span class="${disp.classe}" style="font-size:10px;padding:1px 7px;">${o.esgotado ? 'Esgotado' : 'Ativo'}</span>
+              </div>
+              <button class="btn-mini-alert" onclick="abrirModalHistorico('${o.codigo}')">
+                📈 Histórico &amp; 🔔 Alerta
+              </button>
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function renderizarDicas() {
+      const dicas = CATALOGO.dicas || [];
+      document.getElementById("badgeCountDicas").textContent = dicas.length;
+      const slot = document.getElementById("dicasSlot");
+      slot.innerHTML = dicas.map(d => `
+        <article class="guide-card">
+          <span class="guide-tag ${d.cor === 'verde' ? 'verde' : ''}">${d.tag}</span>
+          <h3 class="guide-title">${d.titulo}</h3>
+          <p class="guide-body">${d.resumo}</p>
+          <button class="guide-cta" onclick="irParaCodigo('${d.codigo_oferta || '#14'}')">
+            → ${d.texto_cta || ('Ver aparelho recomendado (' + (d.codigo_oferta || '#14') + ')')}
+          </button>
+        </article>
+      `).join("");
+    }
+
+    /* ---------------------------------------------------------------------
+       MODAL DE HISTÓRICO DE PREÇOS (KEEPA / BUSCAPÉ) + ALERTA POR E-MAIL
+    --------------------------------------------------------------------- */
+    function abrirModalAlertaGeral() {
+      const primeira = (CATALOGO.ofertas || [])[0];
+      if (primeira) abrirModalHistorico(primeira.codigo);
+    }
+
+    function abrirModalHistorico(codigo) {
+      const of = (CATALOGO.ofertas || []).find(x => x.codigo === codigo) || (CATALOGO.ofertas || [])[0];
+      if (!of) return;
+      OFERTA_MODAL_ATUAL = of;
+
+      document.getElementById("modalBadgeCodigo").textContent = `OFERTA ${of.codigo} • ${of.loja}`;
+      document.getElementById("modalProdTitulo").textContent = of.titulo;
+
+      const dtPost = formatarDataHoraBR(of.publicado_em, false);
+      const dtVerif = formatarDataHoraBR(of.verificado_em || of.publicado_em, false);
+      document.getElementById("modalDatasInfo").innerHTML =
+        `📅 Postado em <strong>${dtPost}</strong> (${of.preco_postagem || of.preco_atual})<br>` +
+        `🔄 Última verificação do robô: <strong>${dtVerif}</strong>`;
+
+      const pAtual = parseReais(of.preco_atual);
+      const pAntigo = parseReais(of.preco_antigo);
+      const est = of.estatisticas_preco || {};
+      const menorVal = est.menor || pAtual;
+      const maiorVal = est.maior || (pAntigo < 999999 ? pAntigo : Math.round(pAtual * 1.25));
+      const mediaVal = est.media || Math.round((menorVal + maiorVal) / 2);
+
+      document.getElementById("statMenor").textContent = est.menor_fmt || formatarMoedaBR(menorVal);
+      document.getElementById("statMedia").textContent = est.media_fmt || formatarMoedaBR(mediaVal);
+      document.getElementById("statMaior").textContent = est.maior_fmt || formatarMoedaBR(maiorVal);
+
+      const disp = obterBadgeDisponibilidade(of);
+      document.getElementById("chartStatusBadge").textContent = disp.texto;
+
+      // Monta pílulas rápidas de meta (Buscapé UX: -5%, -10%, Menor Histórico)
+      const meta5 = Math.max(10, Math.floor(pAtual * 0.95));
+      const meta10 = Math.max(10, Math.floor(pAtual * 0.90));
+      const metaMenor = Math.max(10, Math.floor(menorVal));
+
+      const pillsBox = document.getElementById("targetPillsContainer");
+      pillsBox.innerHTML = `
+        <button type="button" class="target-pill active" onclick="definirMetaRapida(${meta5}, this)">
+          −5% (${formatarMoedaBR(meta5)})
+        </button>
+        <button type="button" class="target-pill" onclick="definirMetaRapida(${meta10}, this)">
+          −10% (${formatarMoedaBR(meta10)})
+        </button>
+        <button type="button" class="target-pill" onclick="definirMetaRapida(${metaMenor}, this)">
+          Menor histórico (${formatarMoedaBR(metaMenor)})
+        </button>
+      `;
+
+      document.getElementById("inputPrecoAlvo").value = meta5;
+
+      // Preenche e-mail salvo anteriormente pelo usuário se houver
+      try {
+        const emailSalvo = localStorage.getItem("ec_ultimo_email_usuario");
+        if (emailSalvo) document.getElementById("inputEmailAlerta").value = emailSalvo;
+      } catch (_) {}
+
+      desenharGraficoSVG(of, meta5);
+      document.getElementById("modalHistorico").classList.add("open");
+    }
+
+    function definirMetaRapida(valor, btnEl) {
+      document.querySelectorAll(".target-pill").forEach(b => b.classList.remove("active"));
+      if (btnEl) btnEl.classList.add("active");
+      document.getElementById("inputPrecoAlvo").value = valor;
+      atualizarLinhaMetaGrafico();
+    }
+
+    function atualizarLinhaMetaGrafico() {
+      if (!OFERTA_MODAL_ATUAL) return;
+      const v = parseFloat(document.getElementById("inputPrecoAlvo").value || "0");
+      desenharGraficoSVG(OFERTA_MODAL_ATUAL, v);
+    }
+
+    function desenharGraficoSVG(of, metaValor) {
+      const container = document.getElementById("svgChartContainer");
+      const pAtual = parseReais(of.preco_atual);
+      const pPost = parseReais(of.preco_postagem || of.preco_atual);
+      const pAnt = parseReais(of.preco_antigo);
+
+      let pts = Array.isArray(of.historico_pontos) && of.historico_pontos.length >= 2
+        ? of.historico_pontos.slice()
+        : [
+            ...(pAnt < 999999 && pAnt > pPost ? [{ data_curta: "Tabela", preco: pAnt, preco_fmt: of.preco_antigo }] : []),
+            { data_curta: "Postagem", preco: pPost, preco_fmt: formatarMoedaBR(pPost) },
+            { data_curta: "Verificado", preco: pAtual, preco_fmt: of.preco_atual }
+          ];
+
+      if (pts.length === 1) {
+        pts.push({ data_curta: "Hoje", preco: pts[0].preco, preco_fmt: pts[0].preco_fmt });
+      }
+
+      const valores = pts.map(p => Number(p.preco));
+      if (metaValor && metaValor > 0) valores.push(metaValor);
+      const minV = Math.min(...valores) * 0.92;
+      const maxV = Math.max(...valores) * 1.06;
+      const range = Math.max(1, maxV - minV);
+
+      const W = 440, H = 148, padL = 16, padR = 16, padT = 22, padB = 26;
+      const plotW = W - padL - padR;
+      const plotH = H - padT - padB;
+
+      const coords = pts.map((p, idx) => {
+        const x = padL + (pts.length === 1 ? plotW / 2 : (idx / (pts.length - 1)) * plotW);
+        const y = padT + plotH - ((Number(p.preco) - minV) / range) * plotH;
+        return { x: Math.round(x * 10) / 10, y: Math.round(y * 10) / 10, ...p };
+      });
+
+      const polyPoints = coords.map(c => `${c.x},${c.y}`).join(" ");
+      const areaPoints = `${coords[0].x},${padT + plotH} ${polyPoints} ${coords[coords.length - 1].x},${padT + plotH}`;
+
+      let linhaMetaHTML = "";
+      if (metaValor && metaValor > 0) {
+        const yMeta = Math.round((padT + plotH - ((metaValor - minV) / range) * plotH) * 10) / 10;
+        if (yMeta >= padT - 4 && yMeta <= padT + plotH + 8) {
+          linhaMetaHTML = `
+            <line x1="${padL}" y1="${yMeta}" x2="${W - padR}" y2="${yMeta}" stroke="#3FBF8A" stroke-width="1.5" stroke-dasharray="5,4" />
+            <text x="${W - padR - 4}" y="${Math.max(12, yMeta - 5)}" fill="#3FBF8A" font-size="10" font-weight="700" text-anchor="end">
+              🎯 Sua Meta: ${formatarMoedaBR(metaValor)}
+            </text>
+          `;
+        }
+      }
+
+      const pontosHTML = coords.map((c, idx) => {
+        const isLast = idx === coords.length - 1;
+        const anchor = idx === 0 ? "start" : (isLast ? "end" : "middle");
+        return `
+          <circle cx="${c.x}" cy="${c.y}" r="${isLast ? 5 : 3.8}" fill="${isLast ? '#3FBF8A' : '#C9A96B'}" stroke="#0B0B0D" stroke-width="1.5" />
+          <text x="${c.x}" y="${Math.max(12, c.y - 8)}" fill="#F5F2EA" font-size="10" font-weight="700" text-anchor="${anchor}">
+            ${c.preco_fmt || formatarMoedaBR(c.preco)}
+          </text>
+          <text x="${c.x}" y="${H - 6}" fill="#A7A9B0" font-size="9.5" text-anchor="${anchor}">
+            ${c.data_curta || ''}
+          </text>
+        `;
+      }).join("");
+
+      container.innerHTML = `
+        <svg viewBox="0 0 ${W} ${H}" width="100%" height="148" role="img" aria-label="Gráfico de evolução de preço">
+          <defs>
+            <linearGradient id="gradOuro" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#C9A96B" stop-opacity="0.32" />
+              <stop offset="100%" stop-color="#C9A96B" stop-opacity="0.0" />
+            </linearGradient>
+          </defs>
+          <polygon points="${areaPoints}" fill="url(#gradOuro)" />
+          <polyline fill="none" stroke="#C9A96B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" points="${polyPoints}" />
+          ${linhaMetaHTML}
+          ${pontosHTML}
+        </svg>
+      `;
+    }
+
+    function fecharModalHistorico() {
+      document.getElementById("modalHistorico").classList.remove("open");
+    }
+
+    function fecharModalSeFundo(ev) {
+      if (ev.target && ev.target.id === "modalHistorico") {
+        fecharModalHistorico();
+      }
+    }
+
+    async function salvarAlertaEmailModal() {
+      if (!OFERTA_MODAL_ATUAL) return;
+      const email = (document.getElementById("inputEmailAlerta").value || "").trim().toLowerCase();
+      const precoAlvo = parseFloat(document.getElementById("inputPrecoAlvo").value || "0");
+
+      if (!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+        exibirToast("⚠️ Digite um endereço de e-mail válido para receber o alerta.");
+        return;
+      }
+      if (!precoAlvo || precoAlvo <= 0) {
+        exibirToast("⚠️ Informe um valor de meta válido em R$.");
+        return;
+      }
+
+      try {
+        localStorage.setItem("ec_ultimo_email_usuario", email);
+      } catch (_) {}
+
+      const novoAlerta = {
+        id: Date.now().toString(36),
+        codigo_oferta: OFERTA_MODAL_ATUAL.codigo,
+        titulo_produto: OFERTA_MODAL_ATUAL.titulo,
+        preco_atual_no_cadastro: OFERTA_MODAL_ATUAL.preco_atual,
+        preco_alvo: precoAlvo,
+        preco_alvo_fmt: formatarMoedaBR(precoAlvo),
+        email: email,
+        criado_em: new Date().toISOString().slice(0, 16).replace("T", " ")
+      };
+
+      const atuais = carregarAlertasLocais().filter(
+        a => !(a.codigo_oferta === novoAlerta.codigo_oferta && a.email === novoAlerta.email)
+      );
+      atuais.unshift(novoAlerta);
+      salvarAlertasLocais(atuais);
+
+      // Envia também para o servidor do Bot (se acessível na rede local ou via webhook configurado)
+      const apiEndpoints = ["http://127.0.0.1:8766/api/alerta"];
+      if (CATALOGO.config && CATALOGO.config.alerta_webhook_url) {
+        apiEndpoints.unshift(CATALOGO.config.alerta_webhook_url);
+      }
+      for (const ep of apiEndpoints) {
+        try {
+          fetch(ep, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(novoAlerta)
+          }).catch(() => {});
+        } catch (_) {}
+      }
+
+      fecharModalHistorico();
+      exibirToast(`🔔 Alerta criado! Avisaremos ${email} quando ${novoAlerta.codigo_oferta} atingir ${novoAlerta.preco_alvo_fmt}.`);
+    }
+
+    function removerAlertaLocal(id) {
+      const filtrados = carregarAlertasLocais().filter(a => a.id !== id);
+      salvarAlertasLocais(filtrados);
+      renderizarMeusAlertas();
+      exibirToast("🗑️ Alerta removido.");
+    }
+
+    function renderizarMeusAlertas() {
+      const lista = carregarAlertasLocais();
+      atualizarContadorAlertas();
+      const slot = document.getElementById("alertasSlot");
+
+      if (lista.length === 0) {
+        slot.innerHTML = `
+          <div class="guide-card" style="text-align:center;">
+            <p class="guide-title">🔔 Você ainda não tem alertas ativos</p>
+            <p class="guide-body">
+              Toque em <strong>"📈 Histórico &amp; 🔔 Alerta"</strong> em qualquer oferta para escolher quanto quer pagar e receber um aviso no seu e-mail assim que o preço baixar!
+            </p>
+            <button class="btn-cta-gold" onclick="mudarAba('ofertas')">Explorar Ofertas</button>
+          </div>
+        `;
+        return;
+      }
+
+      slot.innerHTML = lista.map(a => {
+        const of = (CATALOGO.ofertas || []).find(o => o.codigo === a.codigo_oferta);
+        const precoHoje = of ? of.preco_atual : a.preco_atual_no_cadastro;
+        const numHoje = parseReais(precoHoje);
+        const atingiu = of && !of.esgotado && numHoje <= a.preco_alvo + 0.05;
+
+        return `
+          <article class="guide-card" style="border-color:${atingiu ? 'var(--verde)' : 'var(--hairline)'};">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">
+              <span class="guide-tag ${atingiu ? 'verde' : ''}" style="margin-bottom:0;">
+                ${atingiu ? '🔥 META ATINGIDA AGORA!' : `🎯 META: ${a.preco_alvo_fmt}`}
+              </span>
+              <button class="btn-link-inline" style="color:var(--ink-muted);" onclick="removerAlertaLocal('${a.id}')">Excluir</button>
+            </div>
+            <h3 class="guide-title">${a.codigo_oferta} • ${a.titulo_produto}</h3>
+            <p class="guide-body" style="margin-bottom:10px;">
+              📧 E-mail: <strong>${a.email}</strong><br>
+              💰 Preço verificado hoje: <strong style="color:var(--ink);">${precoHoje}</strong> • Cadastrado em ${formatarDataHoraBR(a.criado_em, true)}
+            </p>
+            ${of ? `
+              <button class="btn-cta-gold" style="width:100%;" onclick="acionarOferta('${of.url_afiliado}', '${of.cupom || ''}', '${of.codigo}')">
+                Ir para a Oferta ${of.codigo} →
+              </button>
+            ` : ''}
+          </article>
+        `;
+      }).join("");
+    }
+
+    async function inicializarVitrine() {
+      try {
+        const r = await fetch("./ofertas.json?t=" + Date.now());
+        if (r.ok) {
+          CATALOGO = await r.json();
+        }
+      } catch (e) {
+        console.warn("Usando catálogo local embutido:", e);
+      }
+
+      if (CATALOGO.config) {
+        if (CATALOGO.config.telegram_url) document.getElementById("linkTelegramVip").href = CATALOGO.config.telegram_url;
+        if (CATALOGO.config.instagram_url) document.getElementById("linkInstagramBio").href = CATALOGO.config.instagram_url;
+      }
+
+      const dtSync = CATALOGO.ultima_auditoria_automatica || CATALOGO.atualizado_em;
+      if (dtSync) {
+        const dtFmt = formatarDataHoraBR(dtSync, true);
+        document.getElementById("statusAtualizacao").innerHTML =
+          `Última verificação automática de preços e estoque: <strong>${dtFmt}</strong> • <strong>Esse Compensa!</strong>`;
+        const lblTopo = document.getElementById("lblUltimaAuditoria");
+        if (lblTopo) lblTopo.textContent = `🔄 Links verificados em ${dtFmt}`;
+      }
+
+      // Verifica se veio com hash #14 na URL
+      const hash = (window.location.hash || "").replace("#", "").trim();
+      if (hash && /^\d+$/.test(hash)) {
+        document.getElementById("inputBusca").value = "#" + hash.padStart(2, "0");
+      }
+
+      atualizarContadorAlertas();
+      renderizarOfertas();
+      renderizarDicas();
+    }
+
+    inicializarVitrine();
+  </script>
+</body>
+</html>
