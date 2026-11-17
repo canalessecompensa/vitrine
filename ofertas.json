@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-11-16 21:14:34",
+  "atualizado_em": "2026-11-16 21:22:02",
   "vitrine_url": "https://canalessecompensa.github.io/vitrine",
   "config": {
     "titulo": "Esse Compensa!",
@@ -8,42 +8,8 @@
     "instagram_url": "https://instagram.com/canalessecompensa",
     "dias_expiracao_automatica": 7
   },
-  "proximo_numero": 16,
+  "proximo_numero": 15,
   "ofertas": [
-    {
-      "codigo": "#15",
-      "numero": 15,
-      "titulo": "Vitrine & Alerta de Preços",
-      "loja": "ESSE COMPENSA OFICIAL",
-      "plataforma": "ml",
-      "categoria": "smartphones",
-      "preco_antigo": "Chega de Atualizar",
-      "preco_atual": "Link na Bio",
-      "preco_postagem": "Link na Bio",
-      "desconto": "-100% GRÁTIS",
-      "desconto_pct": 100,
-      "cupom": "Histórico + Alerta por E-mail",
-      "url_afiliado": "https://canalessecompensa.github.io/vitrine/",
-      "imagem": "img/oferta_15.png",
-      "menor_preco_90d": false,
-      "selo_historico": "Preço verificado hoje",
-      "destaque_topo": true,
-      "esgotado": false,
-      "status_disponibilidade": "disponivel",
-      "variacao_postagem_txt": "Preço confirmado na postagem",
-      "publicado_em": "2026-11-16 21:14:34",
-      "verificado_em": "2026-11-16 21:14:34",
-      "estatisticas_preco": {
-        "menor": 0.0,
-        "menor_fmt": "R$ 0",
-        "media": 0.0,
-        "media_fmt": "R$ 0",
-        "maior": 0.0,
-        "maior_fmt": "R$ 0",
-        "total_coletas": 0
-      },
-      "historico_pontos": []
-    },
     {
       "codigo": "#14",
       "numero": 14,
@@ -60,7 +26,7 @@
       "imagem": "img/oferta_14.png",
       "menor_preco_90d": false,
       "selo_historico": "Menor preço em 90 dias",
-      "destaque_topo": false,
+      "destaque_topo": true,
       "esgotado": false,
       "publicado_em": "2026-11-13 20:33:38",
       "preco_postagem": "R$ 1.049,99",
