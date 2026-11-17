@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-11-17 15:42:42",
+  "atualizado_em": "2026-11-17 16:43:27",
   "vitrine_url": "https://canalessecompensa.github.io/vitrine",
   "config": {
     "titulo": "Esse Compensa!",
@@ -8,8 +8,55 @@
     "instagram_url": "https://instagram.com/canalessecompensa",
     "dias_expiracao_automatica": 7
   },
-  "proximo_numero": 15,
+  "proximo_numero": 16,
   "ofertas": [
+    {
+      "codigo": "#15",
+      "numero": 15,
+      "titulo": "iPhone 17 Pro 256 GB · Laranja-cósmico",
+      "loja": "VENDIDO POR APPLE",
+      "plataforma": "ml",
+      "categoria": "smartphones",
+      "preco_antigo": "R$ 11.499",
+      "preco_atual": "R$ 8.078",
+      "preco_postagem": "R$ 8.078",
+      "desconto": "-29%",
+      "desconto_pct": 29,
+      "cupom": "NO PIX · FRETE GRÁTIS",
+      "url_afiliado": "https://meli.la/2mvtdoo",
+      "imagem": "img/oferta_15.png",
+      "menor_preco_90d": false,
+      "selo_historico": "1º registro",
+      "destaque_topo": true,
+      "esgotado": false,
+      "status_disponibilidade": "disponivel",
+      "variacao_postagem_txt": "Preço confirmado na postagem",
+      "publicado_em": "2026-11-17 16:43:27",
+      "verificado_em": "2026-11-17 16:43:27",
+      "estatisticas_preco": {
+        "menor": 8078.0,
+        "menor_fmt": "R$ 8.078",
+        "media": 8078.0,
+        "media_fmt": "R$ 8.078",
+        "maior": 11499.0,
+        "maior_fmt": "R$ 11.499",
+        "total_coletas": 1
+      },
+      "historico_pontos": [
+        {
+          "data": "Ref. Tabela",
+          "data_curta": "Tabela",
+          "preco": 11499.0,
+          "preco_fmt": "R$ 11.499"
+        },
+        {
+          "data": "2026-11-17 16:43",
+          "data_curta": "17/11 (Post)",
+          "preco": 8078.0,
+          "preco_fmt": "R$ 8.078"
+        }
+      ]
+    },
     {
       "codigo": "#14",
       "numero": 14,
@@ -26,7 +73,7 @@
       "imagem": "img/oferta_14.png",
       "menor_preco_90d": true,
       "selo_historico": "Menor preço histórico",
-      "destaque_topo": true,
+      "destaque_topo": false,
       "esgotado": false,
       "publicado_em": "2026-11-13 20:33:38",
       "preco_postagem": "R$ 1.049,99",
