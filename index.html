@@ -1008,9 +1008,9 @@
           <p class="brand-sub" id="subtituloHeader">Curadoria oficial • Preços auditados diariamente</p>
         </div>
       </div>
-      <div class="live-pill" title="Total de acessos verificados na Vitrine">
+      <div class="live-pill">
         <span class="live-dot"></span>
-        <span>👁️ <strong id="contadorAcessosTopo">—</strong> acessos</span>
+        <span>AUDITADO</span>
       </div>
     </header>
 
@@ -1090,9 +1090,6 @@
     </section>
 
     <footer class="footer">
-      <p style="margin-bottom:6px;color:var(--ouro);font-weight:600;">
-        👁️ <strong id="contadorAcessosRodape">—</strong> visitas registradas na Vitrine Oficial
-      </p>
       <p><strong>Aviso Legal:</strong> As ofertas divulgadas refletem o preço vigente na data e hora de cada postagem e podem sofrer alterações ou esgotar sem aviso prévio pelas lojas parceiras.</p>
       <p id="statusAtualizacao" style="margin-top: 6px; opacity: 0.85;">Histórico de preços e disponibilidade auditados diariamente • <strong>Esse Compensa!</strong></p>
     </footer>
@@ -1291,11 +1288,21 @@
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
+    function obterDataHojeISO() {
+      const d = new Date();
+      const ano = d.getFullYear();
+      const mes = String(d.getMonth() + 1).padStart(2, "0");
+      const dia = String(d.getDate()).padStart(2, "0");
+      return `${ano}-${mes}-${dia}`;
+    }
+
     function acionarOferta(url, cupom, codigo) {
-      // Registra clique de saída na oferta no contador global e local
+      // Registra silenciosamente clique de saída (global + diário) para os relatórios do Telegram
       try {
+        const diaISO = obterDataHojeISO();
         fetch("https://api.counterapi.dev/v1/canalessecompensa/vitrine_cliques/up").catch(() => {});
-        fetch("http://127.0.0.1:8766/api/clique", { method: "POST" }).catch(() => {});
+        fetch(`https://api.counterapi.dev/v1/canalessecompensa/cliques_${diaISO}/up`).catch(() => {});
+        fetch("http://127.0.0.1:8766/api/clique?dia=" + diaISO, { method: "POST" }).catch(() => {});
       } catch (_) {}
 
       if (cupom && cupom.length <= 18 && !cupom.toLowerCase().includes("no app")) {
@@ -1309,76 +1316,16 @@
       }
     }
 
-    async function atualizarContadorAcessosVitrine() {
-      const elTopo = document.getElementById("contadorAcessosTopo");
-      const elRodape = document.getElementById("contadorAcessosRodape");
-      let jaContouSessao = false;
+    function registrarAcessoSilenciosoVitrine() {
+      // Contabiliza a visita silenciosamente em background (1x por sessão) sem exibir na página pública
       try {
-        jaContouSessao = sessionStorage.getItem("ec_sessao_visitada") === "1";
+        if (sessionStorage.getItem("ec_sessao_visitada") === "1") return;
+        sessionStorage.setItem("ec_sessao_visitada", "1");
+        const diaISO = obterDataHojeISO();
+        fetch("https://api.counterapi.dev/v1/canalessecompensa/vitrine_visitas/up").catch(() => {});
+        fetch(`https://api.counterapi.dev/v1/canalessecompensa/visitas_${diaISO}/up`).catch(() => {});
+        fetch("http://127.0.0.1:8766/api/visita?hit=1&dia=" + diaISO).catch(() => {});
       } catch (_) {}
-
-      let totalVisitas = 0;
-
-      // 1. Contador global na nuvem (CounterAPI)
-      try {
-        const rota = jaContouSessao
-          ? "https://api.counterapi.dev/v1/canalessecompensa/vitrine_visitas/"
-          : "https://api.counterapi.dev/v1/canalessecompensa/vitrine_visitas/up";
-        const r = await fetch(rota);
-        if (r.ok) {
-          const d = await r.json();
-          if (d && typeof d.count === "number") {
-            totalVisitas = d.count;
-            try { sessionStorage.setItem("ec_sessao_visitada", "1"); } catch (_) {}
-          }
-        }
-      } catch (_) {}
-
-      // 2. Fallback Abacus Counter se o primário estiver indisponível
-      if (!totalVisitas) {
-        try {
-          const rotaAb = jaContouSessao
-            ? "https://abacus.jasoncameron.dev/get/canalessecompensa_vitrine/visitas"
-            : "https://abacus.jasoncameron.dev/hit/canalessecompensa_vitrine/visitas";
-          const r2 = await fetch(rotaAb);
-          if (r2.ok) {
-            const d2 = await r2.json();
-            if (d2 && typeof d2.value === "number") {
-              totalVisitas = d2.value;
-              try { sessionStorage.setItem("ec_sessao_visitada", "1"); } catch (_) {}
-            }
-          }
-        } catch (_) {}
-      }
-
-      // 3. Sincroniza também com o servidor local do Bot (se aberto no PC)
-      try {
-        fetch("http://127.0.0.1:8766/api/visita" + (jaContouSessao ? "" : "?hit=1"))
-          .then(r => r.json())
-          .then(d => {
-            if (!totalVisitas && d && d.visitas) {
-              const fmt = Number(d.visitas).toLocaleString("pt-BR");
-              if (elTopo) elTopo.textContent = fmt;
-              if (elRodape) elRodape.textContent = fmt;
-            }
-          })
-          .catch(() => {});
-      } catch (_) {}
-
-      // 4. Fallback local persistente caso o visitante esteja com bloqueador de rede estrito
-      try {
-        const salvoLocal = parseInt(localStorage.getItem("ec_visitas_cache") || "0", 10) || 0;
-        if (!totalVisitas) {
-          totalVisitas = jaContouSessao ? Math.max(1, salvoLocal) : salvoLocal + 1;
-        }
-        localStorage.setItem("ec_visitas_cache", String(totalVisitas));
-      } catch (_) {
-        if (!totalVisitas) totalVisitas = 1;
-      }
-
-      const fmtFinal = Number(totalVisitas).toLocaleString("pt-BR");
-      if (elTopo) elTopo.textContent = fmtFinal;
-      if (elRodape) elRodape.textContent = fmtFinal;
     }
 
     function renderizarOfertas() {
@@ -1842,7 +1789,7 @@
       }
 
       atualizarContadorAlertas();
-      atualizarContadorAcessosVitrine();
+      registrarAcessoSilenciosoVitrine();
       renderizarOfertas();
       renderizarDicas();
     }
