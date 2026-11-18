@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-11-18 10:15:44",
+  "atualizado_em": "2026-11-18 10:43:16",
   "vitrine_url": "https://canalessecompensa.github.io/vitrine",
   "config": {
     "titulo": "Esse Compensa!",
@@ -8,8 +8,55 @@
     "instagram_url": "https://instagram.com/canalessecompensa",
     "dias_expiracao_automatica": 7
   },
-  "proximo_numero": 16,
+  "proximo_numero": 17,
   "ofertas": [
+    {
+      "codigo": "#16",
+      "numero": 16,
+      "titulo": "Apple iPhone 16 256 GB",
+      "loja": "VENDIDO POR APPLE",
+      "plataforma": "ml",
+      "categoria": "smartphones",
+      "preco_antigo": "R$ 9.538",
+      "preco_atual": "R$ 5.077",
+      "preco_postagem": "R$ 5.077",
+      "desconto": "-46%",
+      "desconto_pct": 46,
+      "cupom": "NO PIX · FRETE GRÁTIS",
+      "url_afiliado": "https://meli.la/1j8WDCE",
+      "imagem": "img/oferta_16.png",
+      "menor_preco_90d": false,
+      "selo_historico": "1º registro",
+      "destaque_topo": true,
+      "esgotado": false,
+      "status_disponibilidade": "disponivel",
+      "variacao_postagem_txt": "Preço confirmado na postagem",
+      "publicado_em": "2026-11-18 10:43:16",
+      "verificado_em": "2026-11-18 10:43:16",
+      "estatisticas_preco": {
+        "menor": 5077.0,
+        "menor_fmt": "R$ 5.077",
+        "media": 5077.0,
+        "media_fmt": "R$ 5.077",
+        "maior": 9538.0,
+        "maior_fmt": "R$ 9.538",
+        "total_coletas": 1
+      },
+      "historico_pontos": [
+        {
+          "data": "Ref. Tabela",
+          "data_curta": "Tabela",
+          "preco": 9538.0,
+          "preco_fmt": "R$ 9.538"
+        },
+        {
+          "data": "2026-11-18 10:43",
+          "data_curta": "18/11 (Post)",
+          "preco": 5077.0,
+          "preco_fmt": "R$ 5.077"
+        }
+      ]
+    },
     {
       "codigo": "#15",
       "numero": 15,
@@ -27,7 +74,7 @@
       "imagem": "img/oferta_15.png",
       "menor_preco_90d": false,
       "selo_historico": "1º registro",
-      "destaque_topo": true,
+      "destaque_topo": false,
       "esgotado": false,
       "status_disponibilidade": "disponivel",
       "variacao_postagem_txt": " Mesmo valor da postagem",
