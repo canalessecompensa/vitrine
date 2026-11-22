@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-11-22 00:03:18",
+  "atualizado_em": "2026-11-22 02:34:58",
   "vitrine_url": "https://canalessecompensa.github.io/vitrine",
   "config": {
     "titulo": "Esse Compensa!",
@@ -8,8 +8,67 @@
     "instagram_url": "https://instagram.com/canalessecompensa",
     "dias_expiracao_automatica": 7
   },
-  "proximo_numero": 17,
+  "proximo_numero": 18,
   "ofertas": [
+    {
+      "codigo": "#17",
+      "numero": 17,
+      "titulo": "iPhone 17e 256 GB",
+      "loja": "VENDIDO POR APPLE",
+      "plataforma": "ml",
+      "categoria": "smartphones",
+      "preco_antigo": "R$ 5.799",
+      "preco_atual": "R$ 4.287",
+      "preco_postagem": "R$ 4.287",
+      "desconto": "-26%",
+      "desconto_pct": 26,
+      "cupom": "NO PIX · FRETE GRÁTIS",
+      "url_afiliado": "https://meli.la/2MBZhso",
+      "imagem": "img/oferta_17.png",
+      "menor_preco_90d": false,
+      "selo_historico": "1º registro",
+      "destaque_topo": true,
+      "esgotado": false,
+      "status_disponibilidade": "disponivel",
+      "variacao_postagem_txt": "Preço confirmado na postagem",
+      "publicado_em": "2026-11-22 02:34:58",
+      "verificado_em": "2026-11-22 02:34:58",
+      "estatisticas_preco": {
+        "menor": 4287.0,
+        "menor_fmt": "R$ 4.287",
+        "media": 4287.0,
+        "media_fmt": "R$ 4.287",
+        "maior": 5799.0,
+        "maior_fmt": "R$ 5.799",
+        "total_coletas": 3
+      },
+      "historico_pontos": [
+        {
+          "data": "Ref. Tabela",
+          "data_curta": "Tabela",
+          "preco": 5799.0,
+          "preco_fmt": "R$ 5.799"
+        },
+        {
+          "data": "2026-11-22 02:34",
+          "data_curta": "22/11 (Post)",
+          "preco": 4287.0,
+          "preco_fmt": "R$ 4.287"
+        },
+        {
+          "data": "2026-11-20 17:33",
+          "data_curta": "20/11",
+          "preco": 4287.0,
+          "preco_fmt": "R$ 4.287"
+        },
+        {
+          "data": "2026-11-22 02:34",
+          "data_curta": "22/11 (Atual)",
+          "preco": 4287.0,
+          "preco_fmt": "R$ 4.287"
+        }
+      ]
+    },
     {
       "codigo": "#16",
       "numero": 16,
@@ -27,7 +86,7 @@
       "imagem": "img/oferta_16.png",
       "menor_preco_90d": false,
       "selo_historico": "1º registro",
-      "destaque_topo": true,
+      "destaque_topo": false,
       "esgotado": false,
       "status_disponibilidade": "disponivel",
       "variacao_postagem_txt": " Mesmo valor da postagem",
