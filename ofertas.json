@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-11-23 00:04:30",
+  "atualizado_em": "2026-11-23 12:05:18",
   "vitrine_url": "https://canalessecompensa.github.io/vitrine",
   "config": {
     "titulo": "Esse Compensa!",
@@ -32,7 +32,7 @@
       "status_disponibilidade": "preco_subiu",
       "variacao_postagem_txt": "No post original: R$ 4.287",
       "publicado_em": "2026-11-22 02:34:58",
-      "verificado_em": "2026-11-23 00:04:04",
+      "verificado_em": "2026-11-23 12:04:51",
       "estatisticas_preco": {
         "menor": 4098.0,
         "menor_fmt": "R$ 4.098",
@@ -210,7 +210,7 @@
       "esgotado": false,
       "publicado_em": "2026-11-13 20:33:38",
       "preco_postagem": "R$ 1.049,99",
-      "verificado_em": "2026-11-23 00:04:04",
+      "verificado_em": "2026-11-23 12:04:51",
       "status_disponibilidade": "preco_subiu",
       "variacao_postagem_txt": "No post original: R$ 1.049,99",
       "estatisticas_preco": {
@@ -306,7 +306,7 @@
       "esgotado": false,
       "publicado_em": "2026-11-09 11:00:51",
       "preco_postagem": "R$ 4.549",
-      "verificado_em": "2026-11-23 00:04:04",
+      "verificado_em": "2026-11-23 12:04:51",
       "status_disponibilidade": "preco_caiu",
       "variacao_postagem_txt": "Caiu R$ 11 desde a postagem",
       "estatisticas_preco": {
@@ -390,9 +390,9 @@
       "plataforma": "ml",
       "categoria": "smartphones",
       "preco_antigo": "R$ 3.999",
-      "preco_atual": "R$ 3.700",
-      "desconto": "-7%",
-      "desconto_pct": 7,
+      "preco_atual": "R$ 3.281",
+      "desconto": "-18%",
+      "desconto_pct": 18,
       "cupom": "",
       "url_afiliado": "https://meli.la/1EzAGc4",
       "imagem": "img/oferta_12.png",
@@ -402,25 +402,19 @@
       "esgotado": false,
       "publicado_em": "2026-11-07 19:24:12",
       "preco_postagem": "R$ 2.199",
-      "verificado_em": "2026-11-23 00:04:04",
+      "verificado_em": "2026-11-23 12:04:51",
       "status_disponibilidade": "preco_subiu",
       "variacao_postagem_txt": "No post original: R$ 2.199",
       "estatisticas_preco": {
         "menor": 2199.0,
         "menor_fmt": "R$ 2.199",
-        "media": 3222.8,
-        "media_fmt": "R$ 3.222,80",
+        "media": 3228.09,
+        "media_fmt": "R$ 3.228,09",
         "maior": 3999.0,
         "maior_fmt": "R$ 3.999",
-        "total_coletas": 10
+        "total_coletas": 11
       },
       "historico_pontos": [
-        {
-          "data": "2026-11-07 19:24",
-          "data_curta": "07/11 (Post)",
-          "preco": 2199.0,
-          "preco_fmt": "R$ 2.199"
-        },
         {
           "data": "2026-11-16 20:08",
           "data_curta": "16/11",
@@ -474,6 +468,12 @@
           "data_curta": "23/11",
           "preco": 3700.0,
           "preco_fmt": "R$ 3.700"
+        },
+        {
+          "data": "2026-11-23 12:05",
+          "data_curta": "23/11",
+          "preco": 3281.0,
+          "preco_fmt": "R$ 3.281"
         }
       ],
       "motivo_status": ""
@@ -486,9 +486,9 @@
       "plataforma": "ml",
       "categoria": "smartphones",
       "preco_antigo": "R$ 2.099",
-      "preco_atual": "R$ 1.199",
-      "desconto": "-43%",
-      "desconto_pct": 43,
+      "preco_atual": "R$ 1.163",
+      "desconto": "-45%",
+      "desconto_pct": 45,
       "cupom": "",
       "url_afiliado": "https://meli.la/13q3zwi",
       "imagem": "img/oferta_11.png",
@@ -498,25 +498,19 @@
       "esgotado": false,
       "publicado_em": "2026-11-11 22:03:09",
       "preco_postagem": "R$ 989",
-      "verificado_em": "2026-11-23 00:04:04",
+      "verificado_em": "2026-11-23 12:04:51",
       "status_disponibilidade": "preco_subiu",
       "variacao_postagem_txt": "No post original: R$ 989",
       "estatisticas_preco": {
         "menor": 989.0,
         "menor_fmt": "R$ 989",
-        "media": 1102.91,
-        "media_fmt": "R$ 1.102,91",
+        "media": 1110.55,
+        "media_fmt": "R$ 1.110,55",
         "maior": 2099.0,
         "maior_fmt": "R$ 2.099",
-        "total_coletas": 12
+        "total_coletas": 13
       },
       "historico_pontos": [
-        {
-          "data": "2026-11-16 20:08",
-          "data_curta": "16/11",
-          "preco": 1079.0,
-          "preco_fmt": "R$ 1.079"
-        },
         {
           "data": "2026-11-17 08:56",
           "data_curta": "17/11",
@@ -570,6 +564,12 @@
           "data_curta": "23/11",
           "preco": 1199.0,
           "preco_fmt": "R$ 1.199"
+        },
+        {
+          "data": "2026-11-23 12:05",
+          "data_curta": "23/11",
+          "preco": 1163.0,
+          "preco_fmt": "R$ 1.163"
         }
       ],
       "motivo_status": ""
@@ -582,9 +582,9 @@
       "plataforma": "ml",
       "categoria": "smartphones",
       "preco_antigo": "R$ 2.500",
-      "preco_atual": "R$ 1.600",
-      "desconto": "-36%",
-      "desconto_pct": 36,
+      "preco_atual": "R$ 1.794",
+      "desconto": "-28%",
+      "desconto_pct": 28,
       "cupom": "",
       "url_afiliado": "https://meli.la/2o9cugw",
       "imagem": "img/oferta_10.png",
@@ -594,25 +594,19 @@
       "esgotado": false,
       "publicado_em": "2026-11-08 12:47:41",
       "preco_postagem": "R$ 1.461",
-      "verificado_em": "2026-11-23 00:04:04",
+      "verificado_em": "2026-11-23 12:04:51",
       "status_disponibilidade": "preco_subiu",
       "variacao_postagem_txt": "No post original: R$ 1.461",
       "estatisticas_preco": {
         "menor": 1461.0,
         "menor_fmt": "R$ 1.461",
-        "media": 1588.55,
-        "media_fmt": "R$ 1.588,55",
+        "media": 1600.82,
+        "media_fmt": "R$ 1.600,82",
         "maior": 2500.0,
         "maior_fmt": "R$ 2.500",
-        "total_coletas": 13
+        "total_coletas": 14
       },
       "historico_pontos": [
-        {
-          "data": "2026-11-17 21:35",
-          "data_curta": "17/11",
-          "preco": 1659.0,
-          "preco_fmt": "R$ 1.659"
-        },
         {
           "data": "2026-11-18 10:15",
           "data_curta": "18/11",
@@ -666,6 +660,12 @@
           "data_curta": "23/11",
           "preco": 1600.0,
           "preco_fmt": "R$ 1.600"
+        },
+        {
+          "data": "2026-11-23 12:05",
+          "data_curta": "23/11",
+          "preco": 1794.0,
+          "preco_fmt": "R$ 1.794"
         }
       ],
       "motivo_status": ""
@@ -690,7 +690,7 @@
       "esgotado": false,
       "publicado_em": "2026-11-08 12:44:34",
       "preco_postagem": "R$ 133,99",
-      "verificado_em": "2026-11-23 00:04:04",
+      "verificado_em": "2026-11-23 12:04:51",
       "status_disponibilidade": "preco_subiu",
       "variacao_postagem_txt": "No post original: R$ 133,99",
       "estatisticas_preco": {
@@ -786,7 +786,7 @@
       "esgotado": false,
       "publicado_em": "2026-11-12 20:18:49",
       "preco_postagem": "R$ 42,98",
-      "verificado_em": "2026-11-23 00:04:04",
+      "verificado_em": "2026-11-23 12:04:51",
       "status_disponibilidade": "disponivel",
       "variacao_postagem_txt": " Mesmo valor da postagem",
       "estatisticas_preco": {
@@ -870,37 +870,31 @@
       "plataforma": "ml",
       "categoria": "smartphones",
       "preco_antigo": "R$ 11.999",
-      "preco_atual": "R$ 7.599",
-      "desconto": "-37%",
-      "desconto_pct": 37,
+      "preco_atual": "R$ 6.498",
+      "desconto": "-46%",
+      "desconto_pct": 46,
       "cupom": "",
       "url_afiliado": "https://meli.la/2KTGb7Y",
       "imagem": "img/oferta_07.png",
-      "menor_preco_90d": false,
-      "selo_historico": "Topo de linha com 45% OFF",
+      "menor_preco_90d": true,
+      "selo_historico": "Menor preço histórico",
       "destaque_topo": false,
       "esgotado": false,
       "publicado_em": "2026-11-07 23:04:28",
       "preco_postagem": "R$ 6.569",
-      "verificado_em": "2026-11-23 00:04:04",
-      "status_disponibilidade": "preco_subiu",
-      "variacao_postagem_txt": "No post original: R$ 6.569",
+      "verificado_em": "2026-11-23 12:04:51",
+      "status_disponibilidade": "preco_caiu",
+      "variacao_postagem_txt": "Caiu R$ 71 desde a postagem",
       "estatisticas_preco": {
-        "menor": 6569.0,
-        "menor_fmt": "R$ 6.569",
-        "media": 7185.64,
-        "media_fmt": "R$ 7.185,64",
+        "menor": 6498.0,
+        "menor_fmt": "R$ 6.498",
+        "media": 7161.82,
+        "media_fmt": "R$ 7.161,82",
         "maior": 11999.0,
         "maior_fmt": "R$ 11.999",
-        "total_coletas": 12
+        "total_coletas": 13
       },
       "historico_pontos": [
-        {
-          "data": "2026-11-17 08:57",
-          "data_curta": "17/11",
-          "preco": 6760.0,
-          "preco_fmt": "R$ 6.760"
-        },
         {
           "data": "2026-11-17 21:35",
           "data_curta": "17/11",
@@ -954,6 +948,12 @@
           "data_curta": "23/11",
           "preco": 7599.0,
           "preco_fmt": "R$ 7.599"
+        },
+        {
+          "data": "2026-11-23 12:05",
+          "data_curta": "23/11",
+          "preco": 6498.0,
+          "preco_fmt": "R$ 6.498"
         }
       ],
       "motivo_status": ""
@@ -978,7 +978,7 @@
       "esgotado": false,
       "publicado_em": "2026-11-06 20:18:52",
       "preco_postagem": "R$ 5.651",
-      "verificado_em": "2026-11-23 00:04:04",
+      "verificado_em": "2026-11-23 12:04:51",
       "status_disponibilidade": "preco_caiu",
       "variacao_postagem_txt": "Caiu R$ 85 desde a postagem",
       "estatisticas_preco": {
@@ -1074,7 +1074,7 @@
       "esgotado": false,
       "publicado_em": "2026-11-08 12:45:30",
       "preco_postagem": "R$ 2.975",
-      "verificado_em": "2026-11-23 00:04:04",
+      "verificado_em": "2026-11-23 12:04:51",
       "status_disponibilidade": "preco_subiu",
       "variacao_postagem_txt": "No post original: R$ 2.975",
       "estatisticas_preco": {
@@ -1158,9 +1158,9 @@
       "plataforma": "ml",
       "categoria": "smartphones",
       "preco_antigo": "R$ 1.599",
-      "preco_atual": "R$ 1.399",
-      "desconto": "-13%",
-      "desconto_pct": 13,
+      "preco_atual": "R$ 1.310",
+      "desconto": "-18%",
+      "desconto_pct": 18,
       "cupom": "",
       "url_afiliado": "https://meli.la/2EitkFe",
       "imagem": "img/oferta_04.png",
@@ -1170,25 +1170,19 @@
       "esgotado": false,
       "publicado_em": "2026-11-08 05:11:31",
       "preco_postagem": "R$ 1.219",
-      "verificado_em": "2026-11-23 00:04:04",
+      "verificado_em": "2026-11-23 12:04:51",
       "status_disponibilidade": "preco_subiu",
       "variacao_postagem_txt": "No post original: R$ 1.219",
       "estatisticas_preco": {
         "menor": 1219.0,
         "menor_fmt": "R$ 1.219",
-        "media": 1477.64,
-        "media_fmt": "R$ 1.477,64",
+        "media": 1448.64,
+        "media_fmt": "R$ 1.448,64",
         "maior": 1629.0,
         "maior_fmt": "R$ 1.629",
-        "total_coletas": 11
+        "total_coletas": 12
       },
       "historico_pontos": [
-        {
-          "data": "2026-11-17 21:35",
-          "data_curta": "17/11",
-          "preco": 1629.0,
-          "preco_fmt": "R$ 1.629"
-        },
         {
           "data": "2026-11-18 10:15",
           "data_curta": "18/11",
@@ -1242,6 +1236,12 @@
           "data_curta": "23/11",
           "preco": 1399.0,
           "preco_fmt": "R$ 1.399"
+        },
+        {
+          "data": "2026-11-23 12:05",
+          "data_curta": "23/11",
+          "preco": 1310.0,
+          "preco_fmt": "R$ 1.310"
         }
       ],
       "motivo_status": ""
@@ -1254,37 +1254,31 @@
       "plataforma": "ml",
       "categoria": "smartphones",
       "preco_antigo": "R$ 1.855",
-      "preco_atual": "R$ 999",
-      "desconto": "-46%",
-      "desconto_pct": 46,
+      "preco_atual": "R$ 899,10",
+      "desconto": "-52%",
+      "desconto_pct": 52,
       "cupom": "",
       "url_afiliado": "https://meli.la/2o3JQst",
       "imagem": "img/oferta_03.png",
-      "menor_preco_90d": false,
+      "menor_preco_90d": true,
       "selo_historico": "Menor preço histórico",
       "destaque_topo": false,
       "esgotado": false,
       "publicado_em": "2026-11-07 22:57:03",
       "preco_postagem": "R$ 989",
-      "verificado_em": "2026-11-23 00:04:04",
-      "status_disponibilidade": "preco_subiu",
-      "variacao_postagem_txt": "No post original: R$ 989",
+      "verificado_em": "2026-11-23 12:04:51",
+      "status_disponibilidade": "preco_caiu",
+      "variacao_postagem_txt": "Caiu R$ 89,90 desde a postagem",
       "estatisticas_preco": {
-        "menor": 909.0,
-        "menor_fmt": "R$ 909",
-        "media": 1027.18,
-        "media_fmt": "R$ 1.027,18",
+        "menor": 899.1,
+        "menor_fmt": "R$ 899,10",
+        "media": 1018.1,
+        "media_fmt": "R$ 1.018,10",
         "maior": 1855.0,
         "maior_fmt": "R$ 1.855",
-        "total_coletas": 12
+        "total_coletas": 13
       },
       "historico_pontos": [
-        {
-          "data": "2026-11-16 20:08",
-          "data_curta": "16/11",
-          "preco": 999.0,
-          "preco_fmt": "R$ 999"
-        },
         {
           "data": "2026-11-17 08:57",
           "data_curta": "17/11",
@@ -1338,6 +1332,12 @@
           "data_curta": "23/11",
           "preco": 999.0,
           "preco_fmt": "R$ 999"
+        },
+        {
+          "data": "2026-11-23 12:05",
+          "data_curta": "23/11",
+          "preco": 899.1,
+          "preco_fmt": "R$ 899,10"
         }
       ],
       "motivo_status": ""
@@ -1350,9 +1350,9 @@
       "plataforma": "ml",
       "categoria": "smartphones",
       "preco_antigo": "R$ 1.049",
-      "preco_atual": "R$ 764,10",
-      "desconto": "-27%",
-      "desconto_pct": 27,
+      "preco_atual": "R$ 719,10",
+      "desconto": "-31%",
+      "desconto_pct": 31,
       "cupom": "",
       "url_afiliado": "https://meli.la/1qg4Vuk",
       "imagem": "img/oferta_02.png",
@@ -1362,25 +1362,19 @@
       "esgotado": false,
       "publicado_em": "2026-11-08 05:09:52",
       "preco_postagem": "R$ 718,20",
-      "verificado_em": "2026-11-23 00:04:04",
+      "verificado_em": "2026-11-23 12:04:51",
       "status_disponibilidade": "preco_subiu",
       "variacao_postagem_txt": "No post original: R$ 718,20",
       "estatisticas_preco": {
         "menor": 718.2,
         "menor_fmt": "R$ 718,20",
-        "media": 861.87,
-        "media_fmt": "R$ 861,87",
+        "media": 854.72,
+        "media_fmt": "R$ 854,72",
         "maior": 1660.0,
         "maior_fmt": "R$ 1.660",
-        "total_coletas": 13
+        "total_coletas": 14
       },
       "historico_pontos": [
-        {
-          "data": "2026-11-17 21:35",
-          "data_curta": "17/11",
-          "preco": 797.75,
-          "preco_fmt": "R$ 797,75"
-        },
         {
           "data": "2026-11-18 10:15",
           "data_curta": "18/11",
@@ -1434,6 +1428,12 @@
           "data_curta": "23/11",
           "preco": 764.1,
           "preco_fmt": "R$ 764,10"
+        },
+        {
+          "data": "2026-11-23 12:05",
+          "data_curta": "23/11",
+          "preco": 719.1,
+          "preco_fmt": "R$ 719,10"
         }
       ],
       "motivo_status": ""
@@ -1446,37 +1446,31 @@
       "plataforma": "ml",
       "categoria": "smartphones",
       "preco_antigo": "R$ 1.299",
-      "preco_atual": "R$ 683,43",
-      "desconto": "-47%",
-      "desconto_pct": 47,
+      "preco_atual": "R$ 599",
+      "desconto": "-54%",
+      "desconto_pct": 54,
       "cupom": "",
       "url_afiliado": "https://meli.la/26493KF",
       "imagem": "img/oferta_01.png",
-      "menor_preco_90d": false,
+      "menor_preco_90d": true,
       "selo_historico": "Menor preço histórico",
       "destaque_topo": false,
       "esgotado": false,
       "publicado_em": "2026-11-06 19:33:59",
       "preco_postagem": "R$ 629",
-      "verificado_em": "2026-11-23 00:04:04",
-      "status_disponibilidade": "preco_subiu",
-      "variacao_postagem_txt": "No post original: R$ 629",
+      "verificado_em": "2026-11-23 12:04:51",
+      "status_disponibilidade": "preco_caiu",
+      "variacao_postagem_txt": "Caiu R$ 30 desde a postagem",
       "estatisticas_preco": {
-        "menor": 628.2,
-        "menor_fmt": "R$ 628,20",
-        "media": 676.61,
-        "media_fmt": "R$ 676,61",
+        "menor": 599.0,
+        "menor_fmt": "R$ 599",
+        "media": 673.95,
+        "media_fmt": "R$ 673,95",
         "maior": 1299.0,
         "maior_fmt": "R$ 1.299",
-        "total_coletas": 11
+        "total_coletas": 12
       },
       "historico_pontos": [
-        {
-          "data": "2026-11-16 20:08",
-          "data_curta": "16/11",
-          "preco": 628.2,
-          "preco_fmt": "R$ 628,20"
-        },
         {
           "data": "2026-11-17 08:57",
           "data_curta": "17/11",
@@ -1530,6 +1524,12 @@
           "data_curta": "23/11",
           "preco": 683.43,
           "preco_fmt": "R$ 683,43"
+        },
+        {
+          "data": "2026-11-23 12:05",
+          "data_curta": "23/11",
+          "preco": 599.0,
+          "preco_fmt": "R$ 599"
         }
       ],
       "motivo_status": ""
@@ -1607,5 +1607,5 @@
       "publicado_em": "2026-11-11 18:00:00"
     }
   ],
-  "ultima_auditoria_automatica": "2026-11-23 00:04:04"
+  "ultima_auditoria_automatica": "2026-11-23 12:04:51"
 }
