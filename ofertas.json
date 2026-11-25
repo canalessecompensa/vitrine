@@ -1,5 +1,5 @@
 {
-  "atualizado_em": "2026-11-25 00:07:11",
+  "atualizado_em": "2026-11-25 12:07:51",
   "vitrine_url": "https://canalessecompensa.github.io/vitrine",
   "config": {
     "titulo": "Esse Compensa!",
@@ -32,7 +32,7 @@
       "status_disponibilidade": "preco_subiu",
       "variacao_postagem_txt": "No post original: R$ 4.287",
       "publicado_em": "2026-11-22 02:34:58",
-      "verificado_em": "2026-11-25 00:06:45",
+      "verificado_em": "2026-11-25 12:07:25",
       "estatisticas_preco": {
         "menor": 4098.0,
         "menor_fmt": "R$ 4.098",
@@ -222,7 +222,7 @@
       "esgotado": false,
       "publicado_em": "2026-11-13 20:33:38",
       "preco_postagem": "R$ 1.049,99",
-      "verificado_em": "2026-11-25 00:06:45",
+      "verificado_em": "2026-11-25 12:07:25",
       "status_disponibilidade": "preco_subiu",
       "variacao_postagem_txt": "No post original: R$ 1.049,99",
       "estatisticas_preco": {
@@ -318,7 +318,7 @@
       "esgotado": false,
       "publicado_em": "2026-11-09 11:00:51",
       "preco_postagem": "R$ 4.549",
-      "verificado_em": "2026-11-25 00:06:45",
+      "verificado_em": "2026-11-25 12:07:25",
       "status_disponibilidade": "preco_subiu",
       "variacao_postagem_txt": "No post original: R$ 4.549",
       "estatisticas_preco": {
@@ -414,7 +414,7 @@
       "esgotado": false,
       "publicado_em": "2026-11-07 19:24:12",
       "preco_postagem": "R$ 2.199",
-      "verificado_em": "2026-11-25 00:06:45",
+      "verificado_em": "2026-11-25 12:07:25",
       "status_disponibilidade": "preco_subiu",
       "variacao_postagem_txt": "No post original: R$ 2.199",
       "estatisticas_preco": {
@@ -510,7 +510,7 @@
       "esgotado": false,
       "publicado_em": "2026-11-11 22:03:09",
       "preco_postagem": "R$ 989",
-      "verificado_em": "2026-11-25 00:06:45",
+      "verificado_em": "2026-11-25 12:07:25",
       "status_disponibilidade": "disponivel",
       "variacao_postagem_txt": " Mesmo valor da postagem",
       "estatisticas_preco": {
@@ -594,9 +594,9 @@
       "plataforma": "ml",
       "categoria": "smartphones",
       "preco_antigo": "R$ 2.500",
-      "preco_atual": "R$ 1.595",
-      "desconto": "-36%",
-      "desconto_pct": 36,
+      "preco_atual": "R$ 1.750",
+      "desconto": "-30%",
+      "desconto_pct": 30,
       "cupom": "",
       "url_afiliado": "https://meli.la/2o9cugw",
       "imagem": "img/oferta_10.png",
@@ -606,25 +606,19 @@
       "esgotado": false,
       "publicado_em": "2026-11-08 12:47:41",
       "preco_postagem": "R$ 1.461",
-      "verificado_em": "2026-11-25 00:06:45",
+      "verificado_em": "2026-11-25 12:07:25",
       "status_disponibilidade": "preco_subiu",
       "variacao_postagem_txt": "No post original: R$ 1.461",
       "estatisticas_preco": {
         "menor": 1461.0,
         "menor_fmt": "R$ 1.461",
-        "media": 1608.27,
-        "media_fmt": "R$ 1.608,27",
+        "media": 1615.64,
+        "media_fmt": "R$ 1.615,64",
         "maior": 2500.0,
         "maior_fmt": "R$ 2.500",
-        "total_coletas": 17
+        "total_coletas": 18
       },
       "historico_pontos": [
-        {
-          "data": "2026-11-20 11:59",
-          "data_curta": "20/11",
-          "preco": 1669.0,
-          "preco_fmt": "R$ 1.669"
-        },
         {
           "data": "2026-11-21 00:01",
           "data_curta": "21/11",
@@ -678,6 +672,12 @@
           "data_curta": "25/11",
           "preco": 1595.0,
           "preco_fmt": "R$ 1.595"
+        },
+        {
+          "data": "2026-11-25 12:07",
+          "data_curta": "25/11",
+          "preco": 1750.0,
+          "preco_fmt": "R$ 1.750"
         }
       ],
       "motivo_status": ""
@@ -702,7 +702,7 @@
       "esgotado": false,
       "publicado_em": "2026-11-08 12:44:34",
       "preco_postagem": "R$ 133,99",
-      "verificado_em": "2026-11-25 00:06:45",
+      "verificado_em": "2026-11-25 12:07:25",
       "status_disponibilidade": "preco_subiu",
       "variacao_postagem_txt": "No post original: R$ 133,99",
       "estatisticas_preco": {
@@ -798,7 +798,7 @@
       "esgotado": false,
       "publicado_em": "2026-11-12 20:18:49",
       "preco_postagem": "R$ 42,98",
-      "verificado_em": "2026-11-25 00:06:45",
+      "verificado_em": "2026-11-25 12:07:25",
       "status_disponibilidade": "disponivel",
       "variacao_postagem_txt": " Mesmo valor da postagem",
       "estatisticas_preco": {
@@ -894,7 +894,7 @@
       "esgotado": false,
       "publicado_em": "2026-11-07 23:04:28",
       "preco_postagem": "R$ 6.569",
-      "verificado_em": "2026-11-25 00:06:45",
+      "verificado_em": "2026-11-25 12:07:25",
       "status_disponibilidade": "preco_caiu",
       "variacao_postagem_txt": "Caiu R$ 71 desde a postagem",
       "estatisticas_preco": {
@@ -990,7 +990,7 @@
       "esgotado": false,
       "publicado_em": "2026-11-06 20:18:52",
       "preco_postagem": "R$ 5.651",
-      "verificado_em": "2026-11-25 00:06:45",
+      "verificado_em": "2026-11-25 12:07:25",
       "status_disponibilidade": "preco_caiu",
       "variacao_postagem_txt": "Caiu R$ 85 desde a postagem",
       "estatisticas_preco": {
@@ -1086,7 +1086,7 @@
       "esgotado": false,
       "publicado_em": "2026-11-08 12:45:30",
       "preco_postagem": "R$ 2.975",
-      "verificado_em": "2026-11-25 00:06:45",
+      "verificado_em": "2026-11-25 12:07:25",
       "status_disponibilidade": "preco_subiu",
       "variacao_postagem_txt": "No post original: R$ 2.975",
       "estatisticas_preco": {
@@ -1182,7 +1182,7 @@
       "esgotado": false,
       "publicado_em": "2026-11-08 05:11:31",
       "preco_postagem": "R$ 1.219",
-      "verificado_em": "2026-11-25 00:06:45",
+      "verificado_em": "2026-11-25 12:07:25",
       "status_disponibilidade": "preco_subiu",
       "variacao_postagem_txt": "No post original: R$ 1.219",
       "estatisticas_preco": {
@@ -1278,7 +1278,7 @@
       "esgotado": false,
       "publicado_em": "2026-11-07 22:57:03",
       "preco_postagem": "R$ 989",
-      "verificado_em": "2026-11-25 00:06:45",
+      "verificado_em": "2026-11-25 12:07:25",
       "status_disponibilidade": "disponivel",
       "variacao_postagem_txt": " Mesmo valor da postagem",
       "estatisticas_preco": {
@@ -1362,9 +1362,9 @@
       "plataforma": "ml",
       "categoria": "smartphones",
       "preco_antigo": "R$ 1.049",
-      "preco_atual": "R$ 830",
-      "desconto": "-21%",
-      "desconto_pct": 21,
+      "preco_atual": "R$ 719,10",
+      "desconto": "-31%",
+      "desconto_pct": 31,
       "cupom": "",
       "url_afiliado": "https://meli.la/1qg4Vuk",
       "imagem": "img/oferta_02.png",
@@ -1374,25 +1374,19 @@
       "esgotado": false,
       "publicado_em": "2026-11-08 05:09:52",
       "preco_postagem": "R$ 718,20",
-      "verificado_em": "2026-11-25 00:06:45",
+      "verificado_em": "2026-11-25 12:07:25",
       "status_disponibilidade": "preco_subiu",
       "variacao_postagem_txt": "No post original: R$ 718,20",
       "estatisticas_preco": {
         "menor": 718.2,
         "menor_fmt": "R$ 718,20",
-        "media": 848.99,
-        "media_fmt": "R$ 848,99",
+        "media": 841.96,
+        "media_fmt": "R$ 841,96",
         "maior": 1660.0,
         "maior_fmt": "R$ 1.660",
-        "total_coletas": 17
+        "total_coletas": 18
       },
       "historico_pontos": [
-        {
-          "data": "2026-11-19 23:59",
-          "data_curta": "19/11",
-          "preco": 796.41,
-          "preco_fmt": "R$ 796,41"
-        },
         {
           "data": "2026-11-20 11:59",
           "data_curta": "20/11",
@@ -1446,6 +1440,12 @@
           "data_curta": "25/11",
           "preco": 830.0,
           "preco_fmt": "R$ 830"
+        },
+        {
+          "data": "2026-11-25 12:07",
+          "data_curta": "25/11",
+          "preco": 719.1,
+          "preco_fmt": "R$ 719,10"
         }
       ],
       "motivo_status": ""
@@ -1470,7 +1470,7 @@
       "esgotado": false,
       "publicado_em": "2026-11-06 19:33:59",
       "preco_postagem": "R$ 629",
-      "verificado_em": "2026-11-25 00:06:45",
+      "verificado_em": "2026-11-25 12:07:25",
       "status_disponibilidade": "preco_caiu",
       "variacao_postagem_txt": "Caiu R$ 30 desde a postagem",
       "estatisticas_preco": {
@@ -1619,5 +1619,5 @@
       "publicado_em": "2026-11-11 18:00:00"
     }
   ],
-  "ultima_auditoria_automatica": "2026-11-25 00:06:45"
+  "ultima_auditoria_automatica": "2026-11-25 12:07:25"
 }
